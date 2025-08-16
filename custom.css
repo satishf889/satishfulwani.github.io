@@ -1,0 +1,4 @@
+
+body { scroll-behavior: smooth; }
+h1, h2 { color: #0d6efd; }
+.timeline .card { border-left: 4px solid #0d6efd; }
