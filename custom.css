@@ -2,3 +2,55 @@
 body { scroll-behavior: smooth; }
 h1, h2 { color: #0d6efd; }
 .timeline .card { border-left: 4px solid #0d6efd; }
+.about-text {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.card-text{
+    text-align: justify;
+        text-justify: inter-word;
+        font-size: 1.05rem;
+        line-height: 1.7;
+}
+/* Apply font globally */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+    font-family: 'Poppins', sans-serif;
+}
+h1,
+.display-4,
+.display-5 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h2,
+h3 {
+    font-weight: 500;
+}
+
+p,
+a,
+li {
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+#contact .btn {
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+#contact i {
+    margin-right: 6px;
+}
