@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Satish Fulwani</title>
+  <meta name="description" content="Printable professional resume of Satish Fulwani, Staff Data Engineer.">
+  <link rel="icon" type="image/png" href="assets/favicon_v3.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom.css">
+  
+  <style>
+    /* Print-specific layout styling */
+    .resume-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .resume-header {
+      border-bottom: 2px solid var(--accent-primary);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .resume-section-title {
+      color: var(--accent-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .resume-item {
+      margin-bottom: 20px;
+    }
+    
+    .resume-item-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .resume-item-subtitle {
+      font-size: 0.95rem;
+      color: var(--accent-secondary);
+      font-weight: 500;
+    }
+    
+    .resume-item-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    .resume-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .action-bar {
+      max-width: 900px;
+      margin: 20px auto 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* Print media overrides */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      
+      .action-bar, #navbar {
+        display: none !important;
+      }
+      
+      .resume-container {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent !important;
+        max-width: 100%;
+      }
+      
+      .resume-header {
+        border-bottom-color: #000000;
+      }
+      
+      .resume-section-title {
+        color: #000000 !important;
+        border-bottom-color: #000000;
+      }
+      
+      .resume-item-subtitle {
+        color: #333333 !important;
+      }
+      
+      .resume-item-meta {
+        color: #666666 !important;
+      }
+      
+      .text-muted {
+        color: #666666 !important;
+      }
+      
+      .glass-card {
+        background: transparent !important;
+        border: none !important;
+      }
+      
+      a {
+        color: #000000 !important;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Satish Fulwani</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#awards">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="height: 80px;" class="action-bar-spacer"></div>
+
+  <!-- Action Bar -->
+  <div class="action-bar px-3">
+    <a href="index.html" class="btn btn-premium-outline">
+      <i class="bi bi-arrow-left"></i> Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="btn btn-premium">
+      <i class="bi bi-printer-fill"></i> Print Resume / Save PDF
+    </button>
+  </div>
+
+  <!-- Resume Document Container -->
+  <div class="resume-container">
+    
+    <!-- Header -->
+    <div class="resume-header">
+      <div class="row align-items-center">
+        <div class="col-md-8 text-center text-md-start">
+          <h1 class="display-5 fw-bold mb-1">Satish Fulwani</h1>
+          <h5 class="text-secondary fw-semibold mb-2">Staff Data Engineer | Cloud Architect</h5>
+          <p class="text-muted small mb-0">BITS Pilani MTech in Data Science &amp; Engineering</p>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+          <div class="small text-secondary">
+            <div><i class="bi bi-envelope-fill me-2"></i>satish.fulwani63@gmail.com</div>
+            <div><i class="bi bi-telephone-fill me-2"></i>+91 9145175111</div>
+            <div><i class="bi bi-github me-2"></i>github.com/satishf889</div>
+            <div><i class="bi bi-linkedin me-2"></i>linkedin.com/in/satish-fulwani-a831a9150</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="mb-4">
+      <h3 class="resume-section-title">Summary</h3>
+      <p class="text-secondary mb-0">
+        Staff Data Engineer with 7+ years of designing production-grade, cloud-native data platforms across Media &amp; Entertainment, Insurance, and Nutrition industries. Expert in migrating large-scale data systems, reducing pipeline latency, and enabling real-time analytics. Full lifecycle ownership from requirement gathering and data modeling to CI/CD automation and infrastructure provisioning.
+      </p>
+    </div>
+
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-md-7 border-end border-secondary-subtle">
+        
+        <!-- Experience -->
+        <div class="mb-4 pe-md-3">
+          <h3 class="resume-section-title">Professional Experience</h3>
+          
+          <!-- Nagarro -->
+          <div class="resume-item">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="resume-item-title">Staff Data Engineer</span><br>
+                <span class="resume-item-subtitle">Nagarro India Pvt Ltd</span>
+              </div>
+              <span class="resume-item-meta text-end">Feb 2023 – Present<br>Pune, IN</span>
+            </div>
+            <ul class="small text-secondary mt-2">
+              <li>Led legacy-to-Azure cloud migration, re-architecting data pipelines using Azure Data Factory and Databricks.</li>
+              <li>Migrated 1+ TB of data to Azure SQL DB with zero downtime.</li>
+              <li>Delivered ETL/ELT workflows aligned with modern lakehouse patterns.</li>
+              <li>Built real-time data pipelines to power BI dashboards, enhancing decision-making.</li>
+              <li>Managed and mentored a team of 3 data engineers.</li>
+            </ul>
+          </div>
+
+          <!-- Deloitte -->
+          <div class="resume-item">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="resume-item-title">Data Engineer Consultant</span><br>
+                <span class="resume-item-subtitle">Deloitte ILLP</span>
+              </div>
+              <span class="resume-item-meta text-end">Aug 2021 – Feb 2023<br>Mumbai, IN</span>
+            </div>
+            <ul class="small text-secondary mt-2">
+              <li>Resolved high-volume processing bottlenecks using AWS Glue, EMR, S3, and SageMaker.</li>
+              <li>Reduced pipeline latency by 40% through targeted PySpark optimizations.</li>
+              <li>Improved data quality by 55% via automated validation at ingestion.</li>
+              <li>Cut operational costs by 20% through cluster right-sizing on EMR.</li>
+              <li>Automated CI/CD workflows, accelerating deployments.</li>
+            </ul>
+          </div>
+
+          <!-- Accenture -->
+          <div class="resume-item">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="resume-item-title">Big Data Engineer</span><br>
+                <span class="resume-item-subtitle">Accenture Pvt Ltd</span>
+              </div>
+              <span class="resume-item-meta text-end">Oct 2018 – Aug 2021<br>Bangalore, IN</span>
+            </div>
+            <ul class="small text-secondary mt-2">
+              <li>Designed and orchestrated AWS Step Functions serverless pipelines using Lambda and SQS.</li>
+              <li>Migrated 1.5 million media assets from on-premises to AWS cloud.</li>
+              <li>Developed automated tool transferring zip archives up to 60 GB directly to DAM.</li>
+              <li>Reduced total migration cost to $100 by maximizing serverless architecture.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-5 ps-md-4">
+        
+        <!-- Skills -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Technical Skills</h3>
+          <div class="small text-secondary">
+            <div class="mb-2">
+              <strong>Frameworks:</strong> Spark, Databricks, Hadoop, Pandas, NumPy, SciPy, Keras, LangChain
+            </div>
+            <div class="mb-2">
+              <strong>Tools &amp; Languages:</strong> Python, PySpark, SQL, AWS, Azure, Jenkins, CI/CD, Cloud CDK
+            </div>
+            <div class="mb-2">
+              <strong>Databases &amp; AI:</strong> Snowflake, PostgreSQL, DynamoDB, GenAI, LLMs, RAG Pipelines, Vector DBs
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Education</h3>
+          
+          <div class="mb-3">
+            <div class="fw-bold small text-primary">MTech in Data Science &amp; Engineering</div>
+            <div class="small text-secondary">BITS Pilani (2021 - 2023)</div>
+            <div class="small text-muted">CGPI: 7.18/10</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="fw-bold small text-primary">BE in Computer Science</div>
+            <div class="small text-secondary">Mumbai University (2014 - 2018)</div>
+            <div class="small text-muted">CGPI: 7.19/10</div>
+          </div>
+          
+          <div>
+            <div class="fw-bold small text-primary">Higher Secondary School (10+2)</div>
+            <div class="small text-secondary">Akola (2012 - 2014)</div>
+            <div class="small text-muted">Percentage: 78.15%</div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Certifications</h3>
+          <ul class="small text-secondary ps-3">
+            <li>GCP Certified Cloud Digital Leader</li>
+            <li>AWS Certified Machine Learning - Speciality</li>
+            <li>AWS Certified Cloud Practitioner</li>
+            <li>AWS Certified Developer - Associate</li>
+            <li>Machine Learning Advanced Nanodegree</li>
+          </ul>
+        </div>
+
+        <!-- Co-Curricular / Awards -->
+        <div>
+          <h3 class="resume-section-title">Awards</h3>
+          <ul class="small text-secondary ps-3">
+            <li>Brightest Mind Award — Nagarro</li>
+            <li>2nd Prize — Accenture AI Hackathon</li>
+            <li>Double APEX Award for Delivery &amp; Margin</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS Interaction Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

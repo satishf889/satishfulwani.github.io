@@ -1,35 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Satish Fulwani — Staff Data Engineer</title>
+  <title>Satish Fulwani | Staff Data Engineer | Azure, AWS, Databricks, Snowflake</title>
   <meta name="description"
-    content="Portfolio & resume of Satish Fulwani — Staff Data Engineer | 3x AWS Certified | Data Science">
+    content="Portfolio of Satish Fulwani — 7+ years Staff Data Engineer specialising in Azure Data Factory, Databricks, PySpark, Snowflake, AWS Glue, and cloud-native ETL/ELT pipelines. 3x AWS Certified. Open to new opportunities.">
   <meta name="author" content="Satish Fulwani">
-  <link rel="icon" type="image/x-icon" href="assets/favicon_v2.png">
+  <link rel="icon" type="image/png" href="assets/favicon_v3.png">
+  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="custom.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom.css">
+  
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+<body>
 
   <!-- Navbar -->
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-glass fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#hero">Satish Fulwani</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <a class="navbar-brand" href="#hero">Satish Fulwani</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Tech Stack</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
@@ -37,317 +38,531 @@
           <li class="nav-item"><a class="nav-link" href="#awards">Certifications</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- Download CV Premium Button -->
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-premium" href="resume.html">
+              <i class="bi bi-file-earmark-person"></i> Resume
+            </a>
+          </li>
+          <!-- Theme Toggle Button -->
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
         </ul>
-        <a class="btn btn-primary ms-lg-3" href="assets/resume/Satish_Fulwani_Resume.pdf" download>Download
-          Resume</a>
       </div>
+    </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="bg-light text-dark py-5" id="hero">
-    <div class="container mt-5 pt-5">
+  <!-- Hero Section -->
+  <header id="hero">
+    <div class="container hero-content">
       <div class="row align-items-center">
-        <div class="row align-items-center">
-          <!-- Left Column: Photo + Intro Side by Side -->
-          <div class="col-md-6 d-flex align-items-center">
+        <!-- Left Column: Photo + Intro -->
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="d-flex flex-column flex-md-row align-items-center align-items-lg-start gap-4 mb-4">
             <!-- Profile Image -->
-            <img src="assets/profile.jpg" class="rounded-circle shadow me-4" alt="Satish Fulwani" width="140"
-              height="140">
-
+            <div class="profile-img-wrapper mb-3 mb-md-0">
+              <img src="assets/profile-1.png" class="rounded-circle shadow" alt="Satish Fulwani" width="160" height="160">
+            </div>
+            
             <!-- Intro Text -->
-            <div>
-              <h1 class="display-5 fw-bold mb-1">Satish Fulwani</h1>
-              <h4 class="text-muted mb-2">Staff Data Engineer | 3x AWS Certified | Data Science</h4>
-              <p class="lead mb-3">Pune, Maharashtra</p>
-              <a href="assets/resume/Satish_Fulwani_Resume.pdf" class="btn btn-primary me-2" target="_blank">Download
-                Resume</a>
-              <a href="http://linkedin.com/in/satish-fulwani-a831a9150" class="btn btn-outline-dark me-2"
-                target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/satishf889" class="btn btn-outline-dark" target="_blank"><i
-                  class="bi bi-github"></i>
-                GitHub</a>
-            </div>
-          </div>
-          <div class="col-md-5 d-none d-md-flex justify-content-end">
-            <lottie-player src="assets/B9VGzYEST2.json" background="transparent" speed="1"
-              style="width: 100%; height: 300px;" loop autoplay>
-            </lottie-player>
-          </div>
-        </div>
-      </div>
-  </header>
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p class="about-text">
-      <p>
-        Experienced and versatile <b>Staff Data Engineer</b> with 7+ years of delivering scalable, cloud-native data
-        solutions
-        across
-        diverse industries, including <b>Media & Entertainment</b>, <b>Insurance</b>, and <b>Nutrition</b>. Proven
-        expertise in architecting
-        end-to-end data pipelines using <b>Azure Data Factory, Databricks, PySpark</b>, and AWS services such as
-        <b>Glue, Lambda,
-          S3</b>, and
-        <b>DynamoDB</b>. Strong background in building <b>CI/CD</b> pipelines using the Cloud Python CDK and AWS Code
-        Pipeline/Jenkins, and
-        tackling challenging real-world data challenges, including requirement gathering, documentation, infrastructure
-        setup,
-        unit & integration testing.
-      </p>
-      <p>
-        In my most recent role, I led a team of <b>3 data engineers</b> to successfully modernize a legacy data platform
-        by
-        <b>migrating</b>
-        it to Azure. I bring a strong understanding of, ETL/ELT workflows, and automation strategies that enable
-        organizations
-        to make <b>data-driven</b> decisions faster and with greater accuracy.
-      </p>
-      <p>
-        I’m passionate about driving engineering excellence, mentoring junior team members, and collaborating with
-        cross-functional <b>stakeholders</b> to align data strategy with business goals.
-      </p>
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Tech Stack</h2>
-      <div class="d-flex flex-wrap gap-2">
-        <span class="badge bg-dark">Python</span>
-        <span class="badge bg-dark">PySpark</span>
-        <span class="badge bg-dark">Hadoop</span>
-        <span class="badge bg-dark">Big Data</span>
-        <span class="badge bg-dark">SQL</span>
-        <span class="badge bg-dark">AWS</span>
-        <span class="badge bg-dark">Azure</span>
-        <span class="badge bg-dark">Pandas</span>
-        <span class="badge bg-dark">Databricks</span>
-        <span class="badge bg-dark">Jenkins</span>
-        <span class="badge bg-dark">Keras</span>
-        <span class="badge bg-dark">SciPy</span>
-        <span class="badge bg-dark">Data Science</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Experience</h2>
-      <div class="timeline">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Staff Data Engineer <span class="text-muted">— NAGARRO INDIA PVT LTD</span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Feb 2023 – Present</h6>
-            <ul>
-              <li>Led a key project to modernize and migrate legacy data pipelines to Azure Cloud.</li>
-              <li>This project aimed to improve processing efficiency and scalability by designing new ETL/ELT workflows
-                using Azure Data Factory for
-                orchestration and Databricks for big data processing</li>
-              <li>The migration enabled real-time data analytics and better decision-making for the business.</li>
-              <li>Migrated over 1TB of data to Azure SQL DB with zero downtime </li>
-              <li>Developed real-time data pipelines to support business intelligence.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Data Engineer Consultant <span class="text-muted">— DELOITTE ILLP</span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Aug 2021 – Feb 2023</h6>
-            <ul>
-              <li>As a Data Engineer, I resolved complex big data challenges by aligning data engineering strategies
-                with dynamic business needs</li>
-              <li>Worked across departments to identify data quality issues, processing bottlenecks, and scalability
-                gaps in high-volume data systems. Designed and implemented solutions using AWS Glue, AWS EMR,AWS S3, AWS
-                Sagemaker, focusing on performance, reliability, and cost-efficiency</li>
-              <li>Implemented CI/CD pipelines for data workflows.</li>
-              <li>Reduced data pipeline latency by 40% through optimized transformation logic.</li>
-              <li>Improved data quality by 55% via automated validation and cleansing</li>
-              <li>Cut operational costs by 20% through resource-efficient job orchestration.</li>
-              <li>Enabled near real-time reporting, enhancing executive decision-making.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Big Data Engineer <span class="text-muted">— ACCENTURE PVT LTD </span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Oct 2018 – Aug 2021</h6>
-            <ul>
-              <li>Designed, engineered, and orchestrated highly efficient and cost-effective step functions on AWS to
-                ingest and process data from multiple heterogeneous sources.</li>
-              <li>Focused on building scalable, fault-tolerant, and performance-optimized workflows using serverless
-                technologies, ensuring seamless data integration and realtime availability for downstream analytics.
-              </li>
-              <li>Developed serverless architecture using AWS Lambda, Queues and other AWS services.</li>
-              <li>Framework helped migrated 1.5 million assets from an on-premises system to the cloud.</li>
-              <li>Developed an automated tool to generate zip files up to 60GB in size containing on-premises data and
-                copy that data to Digital Asset Management (DAM) tool.</li>
-              <li>The tool's architecture utilized the least number of dedicated AWS EC2 instances and the most amount
-                of all other AWS Serverless Solutions, reducing the migration expense to $100.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Projects</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-
-        <!--Project 1-->
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Football Match Data Scraper and ETL Pipeline</h5>
-              <p class="card-text">This project is a simple yet effective data pipeline that scrapes football match
-                statistics, processes the data, and stores it in a structured CSV format. It serves as a foundational
-                data engineering portfolio project, showcasing skills in web scraping, data cleaning, and structured
-                data storage.</p>
-              <p><strong>Tech stack:</strong> Python Beautiful Soup, Pandas</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://github.com/satishf889/football-match-data-processing.git" class="btn btn-sm btn-primary"
-                target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-
-        <!--Project 2-->
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">COVID19 India Data Analysis</h5>
-              <p class="card-text">This project demonstrates a data engineering and visualization pipeline that scrapes
-                raw COVID-19 data from an API, processes it, and generates a dynamic "racing" bar chart visualization.
-                This project showcases skills in data extraction, cleaning, and creating animated data visualizations.
+            <div class="text-center text-md-start mt-2">
+              <div class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 fs-7 fw-semibold rounded-pill">Open to Opportunities</div>
+              <div class="badge bg-purple-subtle text-purple mb-2 px-3 py-2 fs-7 fw-semibold rounded-pill ms-md-2" style="background: rgba(168, 85, 247, 0.15) !important; color: var(--accent-secondary) !important;">GenAI & LLM Pipelines</div>
+              <h1 class="display-4 fw-bold mb-2">Satish Fulwani</h1>
+              <h4 class="hero-subtitle mb-2">Staff Data Engineer | Azure | AWS | Databricks</h4>
+              <p class="text-muted fs-5 mb-0">
+                <i class="bi bi-geo-alt-fill me-1"></i> Pune, Maharashtra &nbsp;|&nbsp; 7+ Years Experience
               </p>
-              <p><strong>Tech stack:</strong> Python, Pandas</p>
             </div>
-            <div class="card-footer">
-              <a href="https://github.com/satishf889/COVID19-india-analysis.git" class="btn btn-sm btn-primary"
-                target="_blank">View Project</a>
+          </div>
+          
+          <p class="lead text-secondary mb-4 max-w-xl">
+            Building cloud-native data pipelines on <strong>Azure and AWS</strong>, from raw ingestion to lakehouse architecture on <strong>Databricks and Snowflake</strong>, with a growing focus on powering <strong>Generative AI and LLM</strong> workloads.
+          </p>
+          
+          <!-- CTA and Socials -->
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center gap-3">
+            <a href="resume.html" class="btn btn-premium">
+              <i class="bi bi-file-earmark-person-fill"></i> View Resume
+            </a>
+            <a href="http://linkedin.com/in/satish-fulwani-a831a9150" class="btn btn-premium-outline" target="_blank">
+              <i class="bi bi-linkedin text-primary"></i> LinkedIn
+            </a>
+            <a href="https://github.com/satishf889" class="btn btn-premium-outline" target="_blank">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right Column: Interactive Data Node Canvas Animation -->
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="canvas-container w-100 position-relative" style="max-width: 450px; height: 380px;">
+            <canvas id="dataNetworkCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-section reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="section-title">About Me</h2>
+          <div class="glass-card p-4 p-md-5">
+            <p class="lead mb-4 text-secondary">
+              <strong>Staff Data Engineer</strong> with <strong>7+ years</strong> of designing production-grade, cloud-native data platforms across <strong>Media &amp; Entertainment</strong>, <strong>Insurance</strong>, and <strong>Nutrition</strong> industries. Focused on migrating large-scale data systems, reducing pipeline latency, and enabling real-time analytics.
+            </p>
+            <p class="text-secondary mb-4">
+              Deep hands-on expertise in <strong>Azure Data Factory</strong>, <strong>Databricks</strong>, and <strong>PySpark</strong> for large-scale ETL/ELT orchestration, alongside AWS-native services including <strong>Glue, EMR, Lambda, S3, SageMaker</strong>, and <strong>DynamoDB</strong>. I own the full engineering lifecycle: from requirement gathering and data modelling through infrastructure provisioning, CI/CD automation (Cloud Python CDK, AWS CodePipeline, Jenkins), and unit/integration testing.
+            </p>
+            <p class="text-secondary mb-4">
+              Most recently at Nagarro, I <strong>led a team of 3 engineers</strong> to decommission a legacy on-premises data platform and re-architect it on Azure, achieving <strong>1 TB migrated with zero downtime</strong> and unlocking real-time analytics that directly improved executive decision-making speed.
+            </p>
+            <p class="text-secondary mb-0">
+              I care about engineering quality and business impact. I mentor junior engineers, maintain high data quality standards, and translate complex data problems into clean, cost-efficient pipeline solutions that teams can act on.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-section bg-light reveal">
+    <div class="container">
+      <h2 class="section-title section-title-center">Tech Stack</h2>
+      <p class="text-center text-muted mb-5">Battle-tested tools used in production across cloud, big data, and AI workloads</p>
+      
+      <div class="row g-4">
+        <!-- Big Data & Data Engineering -->
+        <div class="col-md-4">
+          <div class="glass-card tech-category-card p-4">
+            <h4 class="tech-category-title">
+              <i class="bi bi-database-fill"></i> Data Engineering & Big Data
+            </h4>
+            <div class="tech-badge-container">
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> PySpark</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Snowflake</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Databricks</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> SQL</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Hadoop</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Big Data</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Pandas</span>
             </div>
           </div>
         </div>
+        
+        <!-- Cloud Platforms & DevOps -->
+        <div class="col-md-4">
+          <div class="glass-card tech-category-card p-4">
+            <h4 class="tech-category-title">
+              <i class="bi bi-cloud-fill"></i> Cloud & DevOps Infrastructure
+            </h4>
+            <div class="tech-badge-container">
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> AWS</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Azure</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Jenkins</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> CI/CD</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Serverless</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Cloud CDK</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Generative AI & Data Science -->
+        <div class="col-md-4">
+          <div class="glass-card tech-category-card p-4">
+            <h4 class="tech-category-title">
+              <i class="bi bi-cpu-fill"></i> Generative AI & Data Science
+            </h4>
+            <div class="tech-badge-container">
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> GenAI & LLMs</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> RAG Pipelines</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> LangChain</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Vector DBs</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Python</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> ML Models</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> Deep Learning</span>
+              <span class="tech-badge"><i class="bi bi-chevron-right"></i> SciPy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!--Project 3-->
+  <!-- Experience Section -->
+  <section id="experience" class="py-section reveal">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="timeline-container">
+        
+        <!-- Job 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Feb 2023 – Present</span>
+            <h3 class="timeline-role">Staff Data Engineer</h3>
+            <div class="timeline-company"><i class="bi bi-building"></i> NAGARRO INDIA PVT LTD</div>
+            <ul class="timeline-list mt-3">
+              <li><strong>Led the legacy-to-Azure cloud migration</strong>, re-architecting end-to-end data pipelines using <strong>Azure Data Factory</strong> for orchestration and <strong>Databricks</strong> for distributed big data processing, improving throughput and scalability.</li>
+              <li>Designed and delivered new <strong>ETL/ELT workflows</strong> aligned with modern lakehouse patterns, replacing brittle on-premises jobs with fault-tolerant, observable pipelines.</li>
+              <li><strong>Migrated 1+ TB of data to Azure SQL DB with zero downtime</strong>, maintaining full data integrity and SLA compliance throughout cutover.</li>
+              <li>Built <strong>real-time data pipelines</strong> to power BI dashboards, enabling faster, data-driven executive decision-making across business units.</li>
+              <li>Managed and mentored a team of <strong>3 data engineers</strong>, conducting code reviews and driving engineering best practices.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Job 2 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2021 – Feb 2023</span>
+            <h3 class="timeline-role">Data Engineer Consultant</h3>
+            <div class="timeline-company"><i class="bi bi-building"></i> DELOITTE ILLP</div>
+            <ul class="timeline-list mt-3">
+              <li>Diagnosed and resolved <strong>high-volume data processing bottlenecks</strong> across multi-domain systems, aligning engineering solutions with fast-changing business requirements.</li>
+              <li>Architected and implemented scalable solutions using <strong>AWS Glue, EMR, S3, and SageMaker</strong>, with a focus on performance, cost-efficiency, and long-term reliability.</li>
+              <li>Automated <strong>CI/CD pipelines</strong> for data workflows, accelerating deployment frequency and reducing manual intervention in production releases.</li>
+              <li><strong>Reduced pipeline latency by 40%</strong> through targeted PySpark transformation optimizations and partitioning strategy improvements.</li>
+              <li><strong>Improved data quality by 55%</strong> by building an automated validation and anomaly-detection framework at ingestion.</li>
+              <li><strong>Cut operational costs by 20%</strong> via resource-efficient job scheduling and cluster right-sizing on EMR.</li>
+              <li>Delivered <strong>near real-time reporting</strong> capabilities, directly reducing time-to-insight for executive stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Job 3 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Oct 2018 – Aug 2021</span>
+            <h3 class="timeline-role">Big Data Engineer</h3>
+            <div class="timeline-company"><i class="bi bi-building"></i> ACCENTURE PVT LTD</div>
+            <ul class="timeline-list mt-3">
+              <li>Designed and orchestrated <strong>AWS Step Functions</strong>-based pipelines to ingest and process data from multiple heterogeneous on-premises and cloud sources at scale.</li>
+              <li>Built <strong>fault-tolerant, serverless ETL workflows</strong> using <strong>AWS Lambda and SQS</strong> with event-driven patterns, ensuring real-time data availability for downstream analytics consumers.</li>
+              <li><strong>Migrated 1.5 million media assets</strong> from on-premises to AWS cloud using a custom-built serverless migration framework.</li>
+              <li>Engineered an automated packaging tool capable of generating and transferring <strong>zip archives up to 60 GB</strong> directly into a Digital Asset Management (DAM) platform.</li>
+              <li><strong>Reduced total migration cost to $100</strong> by maximizing serverless AWS services and eliminating the need for persistent EC2 infrastructure.</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-section bg-light reveal">
+    <div class="container">
+      <h2 class="section-title section-title-center">Featured Projects</h2>
+      <p class="text-center text-muted mb-5">End-to-end data engineering pipelines, analytics solutions, and applied ML research</p>
+      
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        
+        <!-- Project 1 -->
         <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Databricks Spark ETL Pipeline</h5>
-              <p class="card-text">This project demonstrates an end-to-end Extract, Transform, Load (ETL) pipeline using
-                Apache Spark on the Databricks platform. It reads raw data from a CSV file, processes it, and loads the
-                refined data into a SQL database. This project is a solid example of cloud-based data engineering and
-                showcases proficiency with distributed data processing.</p>
-              <p><strong>Tech stack:</strong> Python, Spark, SQL</p>
+          <div class="glass-card project-card">
+            <div class="project-body">
+              <h3 class="project-title text-primary">Football Match Data Scraper & ETL</h3>
+              <p class="project-text">
+                A simple yet highly effective automated web scraping and transformation pipeline. Retrieves football match statistics, cleans structural inconsistencies, and exports refined records into a clean CSV format for analysis.
+              </p>
+              <div class="tech-badge-container">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Beautiful Soup</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">Web Scraping</span>
+              </div>
             </div>
-            <div class="card-footer">
-              <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git"
-                class="btn btn-sm btn-primary" target="_blank">View Project</a>
+            <div class="project-footer">
+              <span class="project-tech">ETL / Scraping</span>
+              <div>
+                <a href="projects.html#project-1" class="btn btn-sm btn-premium-outline me-2">
+                  <i class="bi bi-file-text"></i> Case Study
+                </a>
+                <a href="https://github.com/satishf889/football-match-data-processing.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> Source Code
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <!--Project 4-->
+        
+        <!-- Project 2 -->
         <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">FRUIT CLASSIFIER | DEEP LEARNING | APR’23</h5>
-              <p class="card-text">Conducted an in-depth research project as part of a master’s program, focusing on
-                solving a real-world problem using data-driven techniques. Designed and implemented data pipelines,
-                performed advanced data analysis, and built models aligned with academic and industry standards.</p>
-              <p><strong>Tech stack:</strong> Python, Spark, AWS</p>
+          <div class="glass-card project-card">
+            <div class="project-body">
+              <h3 class="project-title text-primary">COVID-19 India Data Analysis</h3>
+              <p class="project-text">
+                Demonstrates a clean data engineering and visualization pipeline that automatically extracts live updates from a REST API, processes historical vectors, and compiles an interactive racing bar chart representation.
+              </p>
+              <div class="tech-badge-container">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">API Integration</span>
+                <span class="tech-badge">Matplotlib</span>
+              </div>
             </div>
-            <div class="card-footer">
-              <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git"
-                class="btn btn-sm btn-primary" target="_blank">View Project</a>
+            <div class="project-footer">
+              <span class="project-tech">Analytics / Visual</span>
+              <div>
+                <a href="projects.html#project-2" class="btn btn-sm btn-premium-outline me-2">
+                  <i class="bi bi-file-text"></i> Case Study
+                </a>
+                <a href="https://github.com/satishf889/COVID19-india-analysis.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> Source Code
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-
-
+        
+        <!-- Project 3 -->
+        <div class="col">
+          <div class="glass-card project-card">
+            <div class="project-body">
+              <h3 class="project-title text-primary">Databricks Spark ETL Pipeline</h3>
+              <p class="project-text">
+                An end-to-end data warehouse extraction pipeline running on Databricks. Scales big data transformations in PySpark, handles structural schema overrides, and exports results into cloud SQL nodes.
+              </p>
+              <div class="tech-badge-container">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Apache Spark</span>
+                <span class="tech-badge">Databricks</span>
+                <span class="tech-badge">SQL</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-tech">Big Data / Cloud</span>
+              <div>
+                <a href="projects.html#project-3" class="btn btn-sm btn-premium-outline me-2">
+                  <i class="bi bi-file-text"></i> Case Study
+                </a>
+                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="col">
+          <div class="glass-card project-card">
+            <div class="project-body">
+              <h3 class="project-title text-primary">Fruit Classifier | Transfer Learning</h3>
+              <p class="project-text">
+                Deep learning research project completed as part of MTech thesis. Integrates pre-trained transfer learning architectures, sets up preprocessing pipelines on AWS cloud nodes, and constructs precise classification layers.
+              </p>
+              <div class="tech-badge-container">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Keras</span>
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Deep Learning</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-tech">Machine Learning</span>
+              <div>
+                <a href="projects.html#project-4" class="btn btn-sm btn-premium-outline me-2">
+                  <i class="bi bi-file-text"></i> Case Study
+                </a>
+                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- Awards -->
-  <section id="awards" class="py-5">
+  <!-- Awards / Certifications Section -->
+  <section id="awards" class="py-section reveal">
     <div class="container">
-      <h2 class="mb-4">Certifications & Awards</h2>
-      <ul class="list-group">
-        <li class="list-group-item">🎓 GCP Certified Cloud Digital Leader</li>
-        <li class="list-group-item">🎓 AWS Certified Machine Learning- Speciality</li>
-        <li class="list-group-item">🎓 AWS Certified Cloud Practitioner</li>
-        <li class="list-group-item">🎓 AWS Certified Developer- Associate</li>
-        <li class="list-group-item">🎓 Machine Learning Advanced Nanodegree</li>
-        <li class="list-group-item">🎓 Machine Learning Foundation Nanodegree</li>
-        <li class="list-group-item">🏆 BRIGHTEST MIND — Awarded by Nagarro</li>
-        <li class="list-group-item">🏆 2nd Prize in Accenture AI Hackathon (2019)</li>
-        <li class="list-group-item">🏆 APEX Award (twice) for Delivery and Profitability</li>
-      </ul>
+      <h2 class="section-title">Certifications & Awards</h2>
+      <p class="text-muted mb-5">Professional accomplishments, credentials, and honors</p>
+      
+      <div class="row g-3">
+        <!-- Cert 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-cloud-check-fill"></i></div>
+            <h4 class="cert-title">GCP Certified Cloud Digital Leader</h4>
+          </div>
+        </div>
+        
+        <!-- Cert 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-cpu-fill"></i></div>
+            <h4 class="cert-title">AWS Certified Machine Learning - Speciality</h4>
+          </div>
+        </div>
+        
+        <!-- Cert 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-cloud-fill"></i></div>
+            <h4 class="cert-title">AWS Certified Cloud Practitioner</h4>
+          </div>
+        </div>
+        
+        <!-- Cert 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-terminal-fill"></i></div>
+            <h4 class="cert-title">AWS Certified Developer - Associate</h4>
+          </div>
+        </div>
+        
+        <!-- Cert 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <h4 class="cert-title">Machine Learning Advanced Nanodegree</h4>
+          </div>
+        </div>
+        
+        <!-- Cert 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-mortarboard"></i></div>
+            <h4 class="cert-title">Machine Learning Foundation Nanodegree</h4>
+          </div>
+        </div>
+        
+        <!-- Award 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-trophy-fill text-warning"></i></div>
+            <h4 class="cert-title">BRIGHTEST MIND — Nagarro</h4>
+          </div>
+        </div>
+        
+        <!-- Award 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-award-fill text-warning"></i></div>
+            <h4 class="cert-title">2nd Prize — Accenture AI Hackathon (2019)</h4>
+          </div>
+        </div>
+        
+        <!-- Award 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-star-fill text-warning"></i></div>
+            <h4 class="cert-title">Double APEX Award for Delivery & Margin</h4>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="py-5 bg-light">
+  <!-- Education Section -->
+  <section id="education" class="py-section bg-light reveal">
     <div class="container">
-      <h2 class="mb-4">Education</h2>
-      <div class="card p-3 mb-3">
-        <h5>MTech in Data Science and Engineering</h5>
-        <p class="text-muted">BITS Pilani, 2021 – 2023</p>
-      </div>
-      <div class="card p-3 mb-3">
-        <h5>BE in Computer Science</h5>
-        <p class="text-muted">Mumbai University, 2014 – 2018</p>
-      </div>
-      <div class="card p-3 mb-3">
-        <h5>High School</h5>
-        <p class="text-muted">Amravati University, 2012 – 2014</p>
+      <h2 class="section-title">Education</h2>
+      
+      <div class="row g-4">
+        <!-- Degree 1 -->
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="text-primary mb-2"><i class="bi bi-mortarboard-fill fs-3"></i></div>
+              <h4 class="mb-2">MTech in Data Science & Engineering</h4>
+              <p class="text-secondary small">BITS Pilani</p>
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary align-self-start mt-3">2021 – 2023</span>
+          </div>
+        </div>
+        
+        <!-- Degree 2 -->
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="text-primary mb-2"><i class="bi bi-award-fill fs-3"></i></div>
+              <h4 class="mb-2">BE in Computer Science</h4>
+              <p class="text-secondary small">Mumbai University</p>
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary align-self-start mt-3">2014 – 2018</span>
+          </div>
+        </div>
+        
+        <!-- Degree 3 -->
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="text-primary mb-2"><i class="bi bi-book-fill fs-3"></i></div>
+              <h4 class="mb-2">High School Degree</h4>
+              <p class="text-secondary small">Amravati University</p>
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary align-self-start mt-3">2012 – 2014</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
+  <!-- Contact Section -->
+  <section id="contact" class="py-section reveal">
     <div class="container">
-      <h2 class="mb-4">Contact</h2>
-      <p class="mb-4">
-        For professional opportunities, collaborations, or inquiries, please reach out using the options below.
-      </p>
-
-      <!-- Contact Buttons -->
-      <div class="mb-4">
-        <a href="tel:+919145175111" class="btn btn-primary me-2 mb-2">
-          <i class="bi bi-telephone-fill"></i> +91 9145175111
-        </a>
-        <a href="mailto:satish.fulwani63@gmail.com" class="btn btn-outline-dark me-2 mb-2">
-          <i class="bi bi-envelope-fill"></i> Email
-        </a>
-        <a href="http://linkedin.com/in/satish-fulwani-a831a9150" class="btn btn-outline-dark mb-2" target="_blank">
-          <i class="bi bi-linkedin"></i> LinkedIn
-        </a>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title section-title-center">Get In Touch</h2>
+          <p class="lead text-secondary mb-5">
+            Looking to build or scale a world-class data platform? I'm open to Staff/Senior Data Engineering roles, consulting engagements, and technical collaborations. Let's connect!
+          </p>
+          
+          <!-- Contact Options -->
+          <form action="https://formspree.io/f/xkodgald" method="POST" class="contact-form text-start mx-auto" style="max-width: 500px;">
+            <div class="mb-3">
+              <label for="name" class="form-label text-secondary">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label text-secondary">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label text-secondary">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required placeholder="How can I help you?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-premium w-100">
+              <i class="bi bi-send-fill me-2"></i> Send Message
+            </button>
+            <div class="text-center mt-3">
+              <a href="http://linkedin.com/in/satish-fulwani-a831a9150" class="btn btn-sm btn-premium-outline mt-2" target="_blank">
+                <i class="bi bi-linkedin text-primary"></i> Or connect on LinkedIn
+              </a>
+            </div>
+          </form>
+          
+          <hr class="my-5 border-secondary-subtle">
+          
+          <p class="small text-muted mb-0">
+            &copy; <span id="year">2026</span> Satish Fulwani. All Rights Reserved.
+          </p>
+        </div>
       </div>
-
-      <!-- Divider -->
-      <hr class="my-4">
-
-      <!-- Footer Note -->
-      <p class="small text-muted">
-        © 2025 Satish Fulwani. All Rights Reserved.
-      </p>
     </div>
   </section>
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS Interaction Script -->
   <script src="script.js"></script>
 </body>
 
