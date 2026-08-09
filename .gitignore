@@ -1,0 +1,5 @@
+.DS_Store
+
+#Agent Folder
+.agents
+*.pdf
