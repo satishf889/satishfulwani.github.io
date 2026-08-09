@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Satish Fulwani</title>
+  <meta name="description" content="Printable professional resume of Satish Fulwani, Staff Data Engineer.">
+  <link rel="icon" type="image/png" href="assets/favicon_v3.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom.css">
+
+  <style>
+    /* Print-specific layout styling */
+    .resume-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .resume-header {
+      border-bottom: 2px solid var(--accent-primary);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    .resume-section-title {
+      color: var(--accent-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resume-item {
+      margin-bottom: 20px;
+    }
+
+    .resume-item-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+    }
+
+    .resume-item-subtitle {
+      font-size: 0.95rem;
+      color: var(--accent-secondary);
+      font-weight: 500;
+    }
+
+    .resume-item-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .resume-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .action-bar {
+      max-width: 900px;
+      margin: 20px auto 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .resume-date {
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    /* Print media overrides */
+    @page {
+      size: letter;
+      margin: 0.25in 0.25in 0.2in 0.25in;
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+        padding: 0 !important;
+      }
+
+      .action-bar,
+      #navbar,
+      .action-bar-spacer {
+        display: none !important;
+      }
+
+      .resume-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        max-width: 100% !important;
+      }
+
+      .resume-date {
+        color: #4a5568 !important;
+        font-weight: 600 !important;
+      }
+
+      .resume-header {
+        border-bottom: 2.5px solid #000000 !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .resume-header h1 {
+        font-size: 20px !important;
+        margin-bottom: 0px !important;
+      }
+
+      .resume-header h6 {
+        font-size: 10px !important;
+        margin-bottom: 1px !important;
+      }
+
+      .resume-header p {
+        font-size: 9px !important;
+      }
+
+      .resume-header .small.text-secondary {
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+      }
+
+      .resume-section-title {
+        color: #000000 !important;
+        border-bottom: 1.5px solid #000000 !important;
+        font-size: 10px !important;
+        margin-bottom: 6px !important;
+        padding-bottom: 1px !important;
+        margin-top: 2px !important;
+      }
+
+      .resume-item {
+        margin-bottom: 6px !important;
+      }
+
+      .resume-item-title {
+        font-size: 9.5px !important;
+        font-weight: 700 !important;
+        color: #1a365d !important;
+      }
+
+      .resume-item-subtitle {
+        color: #333333 !important;
+        font-size: 8.5px !important;
+      }
+
+      .header-name {
+        color: #111111 !important;
+      }
+
+      .resume-item-meta {
+        color: #555555 !important;
+        font-size: 8px !important;
+        line-height: 1.15 !important;
+      }
+
+      .text-muted {
+        color: #555555 !important;
+      }
+
+      .text-secondary {
+        color: #222222 !important;
+      }
+
+      .glass-card {
+        background: transparent !important;
+        border: none !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none;
+      }
+
+      /* Spacing compressions */
+      .mb-4 {
+        margin-bottom: 6px !important;
+      }
+
+      .mb-3 {
+        margin-bottom: 4px !important;
+      }
+
+      ul.small {
+        font-size: 8.5px !important;
+        margin-top: 1px !important;
+        margin-bottom: 0px !important;
+        padding-left: 10px !important;
+      }
+
+      ul.small li {
+        margin-bottom: 1px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* Force exact same side-by-side alignment on print/PDF */
+      .row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+      }
+
+      .col-md-4 {
+        width: 32% !important;
+        flex: 0 0 32% !important;
+        max-width: 32% !important;
+        padding-right: 10px !important;
+        border-right: 1px solid #dddddd !important;
+        /* Keep the vertical line clean on print */
+      }
+
+      .col-md-8 {
+        width: 68% !important;
+        flex: 0 0 68% !important;
+        max-width: 68% !important;
+        padding-left: 12px !important;
+      }
+
+      .col-md-5 {
+        width: 68% !important;
+        flex: 0 0 68% !important;
+        max-width: 68% !important;
+      }
+
+      .text-center {
+        text-align: left !important;
+      }
+
+      .text-md-start {
+        text-align: left !important;
+      }
+
+      .text-md-end {
+        text-align: right !important;
+      }
+
+      .text-end {
+        text-align: right !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Satish Fulwani</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#awards">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="height: 80px;" class="action-bar-spacer"></div>
+
+  <!-- Action Bar -->
+  <div class="action-bar px-3">
+    <a href="index.html" class="btn btn-premium-outline">
+      <i class="bi bi-arrow-left"></i> Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="btn btn-premium">
+      <i class="bi bi-printer-fill"></i> Print Resume / Save PDF
+    </button>
+  </div>
+
+  <!-- Resume Document Container -->
+  <div class="resume-container">
+
+    <!-- Header -->
+    <div class="resume-header">
+      <div class="row align-items-center">
+        <!-- Contacts (Left) -->
+        <div class="col-md-4 text-center text-md-start">
+          <div class="small text-secondary">
+            <div class="mb-1"><i class="bi bi-globe me-2"></i><a
+                href="https://satishf889.github.io/satishfulwani.github.io" target="_blank"
+                class="text-secondary text-decoration-none">satishfulwani.com</a></div>
+            <div class="mb-1"><i class="bi bi-github me-2"></i><a href="https://github.com/satishf889" target="_blank"
+                class="text-secondary text-decoration-none">github.com/satishf889</a></div>
+            <div class="mb-1"><i class="bi bi-envelope-fill me-2"></i><a href="mailto:satish.fulwani63@gmail.com"
+                class="text-secondary text-decoration-none">satish.fulwani63@gmail.com</a></div>
+            <div class="mb-1"><i class="bi bi-telephone-fill me-2"></i><a href="tel:+919145175111"
+                class="text-secondary text-decoration-none">+91-9145175111</a></div>
+          </div>
+        </div>
+        <!-- Name & Titles (Middle) -->
+        <div class="col-md-5 text-center text-md-start mt-3 mt-md-0">
+          <h1 class="display-6 fw-bold mb-1 header-name" style="color: var(--accent-primary);">SATISH FULWANI</h1>
+          <h6 class="text-secondary fw-semibold mb-2">Staff Data Engineer | Data Science | 3x AWS Certified</h6>
+          <p class="text-muted small mb-0">MTech in Data Science and Engineering from BITS, Pilani</p>
+        </div>
+        <!-- Profile Picture (Right) -->
+        <div class="col-md-3 text-center text-md-end mt-3 mt-md-0 no-print">
+          <img src="assets/profile-1.png" class="rounded-circle shadow-sm border border-secondary-subtle"
+            alt="Satish Fulwani" width="90" height="90" style="object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Left Column (Narrower, Summary/Skills/Education/Certs/Co-curricular) -->
+      <div class="col-md-4 border-end border-secondary-subtle pe-md-3">
+
+        <!-- Summary -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Summary</h3>
+          <p class="text-secondary mb-2" style="text-align: justify;">
+            Experienced and versatile <strong>Staff Data Engineer</strong> with 7+ years of delivering scalable,
+            cloud-native data solutions across diverse industries (Media &amp; Entertainment, Insurance, Nutrition).
+            Proven expertise in architecting end-to-end data pipelines using <strong>Azure Data Factory, Databricks,
+              PySpark, Snowflake, and AWS services</strong> (Glue, Lambda, S3, DynamoDB). Adept in Generative AI
+            engineering, specializing in building production-grade <strong>RAG chatbots</strong> and semantic search
+            engines using <strong>Snowflake Cortex AI</strong>, <strong>Snowflake Vector Tables</strong>, and
+            <strong>LangChain</strong> workflow design.
+          </p>
+          <p class="text-secondary mb-2" style="text-align: justify;">
+            In my most recent role, I led a team of <strong>3 data engineers</strong> to successfully modernize a legacy
+            data platform by migrating it to <strong>Azure and Snowflake</strong>. I bring a strong understanding of,
+            ETL/ELT workflows, and automation strategies that enable organizations to make data-driven decisions faster
+            and with greater accuracy.
+          </p>
+          <p class="text-secondary mb-0" style="text-align: justify;">
+            I’m passionate about driving engineering excellence, mentoring junior team members, and collaborating with
+            cross-functional stakeholders to align data strategy with business goals.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Technical Skills</h3>
+          <div class="small text-secondary">
+            <div class="mb-2">
+              <strong>FRAMEWORKS &amp; GENAI:</strong><br>Spark, Databricks, Hadoop, Pandas, NumPy, Keras,
+              <strong>Snowflake Cortex AI, LangChain, Document Parsing, Text Chunking</strong>
+            </div>
+            <div class="mb-2">
+              <strong>CLOUD &amp; DATA WAREHOUSING:</strong><br>AWS, Azure, <strong>Snowflake</strong>, Databricks
+              Lakehouse, Spark (PySpark), SQL, Jenkins CI/CD
+            </div>
+            <div class="mb-2">
+              <strong>DATABASES &amp; AI:</strong><br>PostgreSQL, DynamoDB (NoSQL), <strong>Snowflake native Vector
+                Search</strong>, Vector DBs (Chroma/Pinecone), CNNs, ML Models
+            </div>
+          </div>
+        </div>
+
+        <!-- Co-Curricular -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Co-Curricular</h3>
+          <ul class="small text-secondary ps-3 mb-0">
+            <li class="mb-1">Awarded BRIGHTEST MIND award by Nagarro.</li>
+            <li class="mb-1">Won 2nd Prize in Accenture AI Hackathon conducted in <span class="resume-date">August,
+                2019</span></li>
+            <li class="mb-1">Twice received the APEX Award for Profitability and Delivery</li>
+            <li class="mb-1">Developed Mail Automation System for Human Resource Team for sending bulk mail using Python
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Certifications</h3>
+          <ul class="small text-secondary ps-3 mb-0">
+            <li class="mb-1">GCP Certified Cloud Digital Leader | GCP | <span class="resume-date">Dec'22</span></li>
+            <li class="mb-1">AWS Certified Machine Learning- Speciality | AWS | <span class="resume-date">Mar'20</span>
+            </li>
+            <li class="mb-1">AWS Certified Cloud Practitioner | AWS | <span class="resume-date">Mar'20</span></li>
+            <li class="mb-1">AWS Certified Developer- Associate | AWS | <span class="resume-date">Sep'19</span></li>
+            <li class="mb-1">Machine Learning Advanced Nanodegree | Udacity | <span class="resume-date">Jan'19</span>
+            </li>
+            <li class="mb-1">Machine Learning Foundation Nanodegree | Udacity | <span class="resume-date">Apr'18</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Education</h3>
+
+          <div class="mb-3">
+            <div class="fw-bold small text-primary">BITS PILANI</div>
+            <div class="small text-secondary">MTECH DATA SCIENCE &amp; ENGINEERING | <span
+                class="resume-date">APR'21-APR'23</span> | PILANI, RJ</div>
+            <div class="small text-muted">CGPI – 7.18/10</div>
+          </div>
+
+          <div class="mb-0">
+            <div class="fw-bold small text-primary">MUMBAI UNIVERSITY</div>
+            <div class="small text-secondary">B.E. COMPUTER SCIENCE | <span class="resume-date">JUN'14-JUN'18</span> |
+              VESIT, MUMBAI, MH</div>
+            <div class="small text-muted">CGPI – 7.19/10</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column (Wider, Experience/Projects) -->
+      <div class="col-md-8 ps-md-4">
+
+        <!-- Experience -->
+        <div class="mb-4">
+          <h3 class="resume-section-title">Professional Experience</h3>
+
+          <!-- Nagarro -->
+          <div class="resume-item">
+            <span class="resume-item-title">Role: STAFF DATA ENGINEER</span><br>
+            <span class="resume-item-subtitle">Nagarro India Pvt Ltd | <span class="resume-date">Feb'23 - Present</span>
+              | Pune, IN</span>
+            <div class="small text-secondary mt-1">
+              <div><strong>Industry:</strong> Asia’s Largest Insurance Company</div>
+              <div><strong>Project:</strong> End-to-End Data Pipeline Implementation in Azure Cloud &amp; Document
+                Parsing Framework</div>
+              <div><strong>Technologies:</strong> Azure Databricks, Spark (PySpark), Python, Azure Data Factory, Azure
+                Synapse, Azure Storage, SQL Server, AWS, Snowflake, LangChain, Vector DB</div>
+            </div>
+            <p class="small text-secondary mt-2" style="text-align: justify;">
+              Led a key project to modernize and migrate legacy data pipelines to Azure Cloud. This project aimed to
+              improve processing efficiency and scalability by designing new ETL/ELT workflows using Azure Data Factory
+              for orchestration and Databricks for ETL operations. The migration enabled near real-time data analytics
+              and better decision-making for the business.
+            </p>
+            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+            <ul class="small text-secondary ps-3 mb-0">
+              <li>Architected and deployed an intelligent GenAI <strong>RAG chatbot</strong> powered by
+                <strong>Snowflake Cortex AI</strong> (LLMs &amp; Search Services) to retrieve and summarize insights
+                from complex business documents.</li>
+              <li>Engineered an automated <strong>unstructured file parsing, text chunking, and metadata extraction
+                  pipeline</strong> using <strong>LangChain</strong>, indexing high-dimensional embeddings directly into
+                <strong>Snowflake's native Vector Tables</strong>.</li>
+              <li>Designed cloud data pipelines integrating <strong>AWS services</strong> (S3, Lambda, API Gateway) and
+                <strong>Snowflake data warehouse</strong> to enable real-time analytical queries and business
+                intelligence dashboards.</li>
+              <li>Migrated <strong>1+ TB</strong> of legacy databases to <strong>Azure SQL DB</strong> and
+                <strong>Snowflake</strong> with zero downtime, redesigning ETL/ELT workflows.</li>
+            </ul>
+          </div>
+
+          <!-- Deloitte -->
+          <div class="resume-item mt-3">
+            <span class="resume-item-title">Role: DATA ENGINEER CONSULTANT</span><br>
+            <span class="resume-item-subtitle">Deloitte ILLP | <span class="resume-date">Aug'21 - Feb'23</span> |
+              Mumbai, IN</span>
+            <div class="small text-secondary mt-1">
+              <div><strong>Industry:</strong> Dutch Nutrition Company</div>
+              <div><strong>Project:</strong> Solving Complex Big Data Issues Based on Business Needs</div>
+              <div><strong>Technologies:</strong> Spark (PySpark), Python, AWS Glue, Hadoop, AWS S3, Microsoft Dynamics
+                (CRM)</div>
+            </div>
+            <p class="small text-secondary mt-2" style="text-align: justify;">
+              As a Data Engineer, I tackled complex big data challenges by aligning data engineering solutions with
+              evolving business requirements. Partnered with cross-functional teams to diagnose and resolve data quality
+              issues, optimize processing workflows, in large-scale data environments. Designed and implemented
+              optimized, reliable, and cost-effective data solutions using AWS Glue, AWS Athena, AWS S3, and AWS
+              SageMaker (For Notebooks).
+            </p>
+            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+            <ul class="small text-secondary ps-3 mb-0">
+              <li>Executed ETL workflows on AWS Data Lake using AWS Glue, Crawlers, and Athena.</li>
+              <li>Set up Hadoop sandbox environments with AWS Glue Dev Endpoints, SageMaker, and Hortonworks.</li>
+              <li>Created data pipeline that sent data to different machine learning models.</li>
+              <li>Enabled near real-time reporting, enhancing executive decision-making.</li>
+            </ul>
+          </div>
+
+          <!-- Accenture -->
+          <div class="resume-item mt-3">
+            <span class="resume-item-title">Role: BIG DATA ENGINEER</span><br>
+            <span class="resume-item-subtitle">Accenture Pvt Ltd | <span class="resume-date">Oct'18 - Aug'21</span> |
+              Bangalore, IN</span>
+            <div class="small text-secondary mt-1">
+              <div><strong>Industry:</strong> US based Media &amp; Entertainment Client</div>
+              <div><strong>Project:</strong> Implemented migration of static files to AWS S3, optimizing storage and
+                delivery efficiency</div>
+              <div><strong>Technologies:</strong> AWS EC2, AWS DynamoDB, AWS lambda, AWS SQS</div>
+            </div>
+            <p class="small text-secondary mt-2" style="text-align: justify;">
+              Created, planned, and coordinated a highly effective and economical AWS migration architecture for
+              ingesting and processing data from on-premise systems. committed to utilizing serverless technologies to
+              create workflows that are scalable, fault-tolerant, and performance-optimized while maintaining data
+              integrity.
+            </p>
+            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+            <ul class="small text-secondary ps-3 mb-0">
+              <li>Developed event-driven serverless architectures on AWS using Lambda, SQS, and other core services.
+              </li>
+              <li>Engineered automated migration framework to safely transfer 1.5 million media assets to AWS cloud.
+              </li>
+              <li>Developed utility tool to compress and upload 60GB zip packages directly to Digital Asset Management
+                system.</li>
+              <li>Reduced migration overhead to $100 by maximizing serverless design and minimizing dedicated EC2
+                instances.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Project Portfolio -->
+        <div>
+          <h3 class="resume-section-title">Project Portfolio</h3>
+
+          <!-- Fruit Classifier -->
+          <div class="resume-item">
+            <span class="resume-item-title">FRUIT CLASSIFIER</span><br>
+            <span class="resume-item-subtitle">Deep Learning | <span class="resume-date">Apr'23</span></span>
+            <ul class="small text-secondary ps-3 mt-1 mb-0">
+              <li>Conducted an in-depth research project as part of a master’s program, focusing on solving a real-world
+                problem using data-driven techniques. Designed and implemented data pipelines, performed advanced data
+                analysis, and built models aligned with academic and industry standards</li>
+              <li>Fruit Classifier is a Machine Learning Model built using Convolutional Neural Network (CNN) and Deep
+                Neural Network that predicts the fruit names in an image, inspired by the notion of "Intelligent
+                Farming."</li>
+            </ul>
+          </div>
+
+          <!-- Sales24 -->
+          <div class="resume-item mt-3">
+            <span class="resume-item-title">SALES24</span><br>
+            <span class="resume-item-subtitle">AWS &amp; Node.js | <span class="resume-date">Oct'19</span></span>
+            <ul class="small text-secondary ps-3 mt-1 mb-0">
+              <li>SALES24 is a proof-of-concept serverless website for selling and buying old goods.</li>
+              <li>The technologies being used are AWS API Gateway, AWS Lambda, AWS DynamoDB &amp; Amazon S3. The user
+                authentication process is managed by an API Authoriser.</li>
+            </ul>
+          </div>
+
+          <!-- Dog Breed Classifier -->
+          <div class="resume-item mt-3">
+            <span class="resume-item-title">DOG BREED CLASSIFIER</span><br>
+            <span class="resume-item-subtitle">Machine Learning | <span class="resume-date">Jul'18</span></span>
+            <ul class="small text-secondary ps-3 mt-1 mb-0">
+              <li>Supported the deployment and training of cutting-edge CNN models using backpropagation and chain rule.
+              </li>
+              <li>Used fundamental machine learning techniques as SoftMax, one-hot encoding, cross entropy, logistic
+                regression, and associated error function.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS Interaction Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

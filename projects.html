@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Case Studies | Satish Fulwani</title>
+  <meta name="description"
+    content="Deep dives into data engineering projects, ETL pipelines, and machine learning architectures by Satish Fulwani.">
+  <meta name="author" content="Satish Fulwani">
+  <link rel="icon" type="image/png" href="assets/favicon_v3.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom.css">
+  
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Satish Fulwani</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#awards">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <!-- Download CV Premium Button -->
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-premium" href="resume.html">
+              <i class="bi bi-file-earmark-person"></i> Resume
+            </a>
+          </li>
+          <!-- Theme Toggle Button -->
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Header Section -->
+  <header class="blog-header reveal">
+    <div class="container text-center">
+      <div class="badge bg-purple-subtle text-purple mb-3 px-3 py-2 fs-7 fw-semibold rounded-pill" style="background: rgba(168, 85, 247, 0.15) !important; color: var(--accent-secondary) !important;">Deep Dives</div>
+      <h1 class="display-4 fw-bold mb-3">Project Case Studies</h1>
+      <p class="lead text-secondary max-w-xl mx-auto">
+        Detailed technical write-ups of my core data engineering projects, pipeline architectures, and analytics solutions.
+      </p>
+    </div>
+  </header>
+
+  <!-- Blog Posts Section -->
+  <section class="py-section reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          
+          <!-- Project 1 -->
+          <article id="project-1" class="blog-post glass-card p-4 p-md-5">
+            <h2 class="blog-title">Football Match Data Scraper &amp; ETL</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Beautiful Soup | Pandas | Web Scraping</div>
+            <div class="blog-content">
+              <p>This project is an automated web scraping and transformation pipeline designed to retrieve and process football match statistics. The goal was to build a reliable mechanism to extract unstructured web data and transform it into a clean, queryable format.</p>
+              
+              <h4>Architecture &amp; Implementation</h4>
+              <ul>
+                <li><strong>Extraction:</strong> Built a custom web scraper using Python and Beautiful Soup to navigate and extract match data dynamically.</li>
+                <li><strong>Transformation:</strong> Utilized Pandas to handle structural inconsistencies, clean missing data points, and normalize team and player metrics.</li>
+                <li><strong>Load:</strong> Exported the refined records into a clean, standardized CSV format, ready for downstream analysis or visualization tools.</li>
+              </ul>
+              
+              <p>The pipeline demonstrated the ability to handle messy HTML structures and turn them into actionable data sets with minimal manual intervention.</p>
+              
+              <div class="mt-4">
+                <a href="https://github.com/satishf889/football-match-data-processing.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article id="project-2" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">COVID-19 India Data Analysis</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Pandas | API Integration | Matplotlib</div>
+            <div class="blog-content">
+              <p>A clean data engineering and visualization pipeline that automatically extracts live COVID-19 updates via REST APIs and compiles the historical data into an interactive representation.</p>
+              
+              <h4>Pipeline Details</h4>
+              <ul>
+                <li><strong>API Integration:</strong> Implemented a reliable Python script to fetch live JSON payloads from a public REST API.</li>
+                <li><strong>Data Processing:</strong> Processed historical vectors and time-series data using Pandas, dealing with rolling averages and anomaly correction.</li>
+                <li><strong>Visualization:</strong> Compiled the processed data into an interactive racing bar chart representation using Matplotlib and data animation techniques.</li>
+              </ul>
+              
+              <p>This project highlights the ability to build an end-to-end flow from raw API data ingestion to a polished, user-facing analytical output.</p>
+              
+              <div class="mt-4">
+                <a href="https://github.com/satishf889/COVID19-india-analysis.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article id="project-3" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Databricks Spark ETL Pipeline</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Apache Spark | Databricks | SQL</div>
+            <div class="blog-content">
+              <p>An end-to-end data warehouse extraction and processing pipeline built entirely on the Databricks platform, showcasing big data scaling capabilities using PySpark.</p>
+              
+              <h4>Key Engineering Decisions</h4>
+              <ul>
+                <li><strong>Distributed Processing:</strong> Used Apache Spark to scale big data transformations across multiple worker nodes, drastically reducing processing time compared to single-node pandas.</li>
+                <li><strong>Schema Management:</strong> Handled complex structural schema overrides and enforced data quality checks before the write phase.</li>
+                <li><strong>Cloud Integration:</strong> Exported the final processed data sets securely into cloud SQL nodes for reporting integration.</li>
+              </ul>
+              
+              <p>This implementation proves a strong grasp of distributed computing principles and the modern Databricks lakehouse architecture.</p>
+              
+              <div class="mt-4">
+                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article id="project-4" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Fruit Classifier | Transfer Learning</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Keras | AWS | Deep Learning</div>
+            <div class="blog-content">
+              <p>A deep learning research project completed as part of my MTech thesis. This project integrates pre-trained transfer learning architectures to build a highly accurate image classification model.</p>
+              
+              <h4>Technical Approach</h4>
+              <ul>
+                <li><strong>Transfer Learning:</strong> Leveraged existing advanced architectures (like ResNet/VGG) through Keras to accelerate training and improve accuracy with limited data.</li>
+                <li><strong>Cloud Infrastructure:</strong> Set up data preprocessing pipelines and model training environments on AWS cloud nodes to utilize GPU compute efficiently.</li>
+                <li><strong>Model Tuning:</strong> Constructed precise classification layers and fine-tuned hyperparameters to achieve the optimal validation accuracy.</li>
+              </ul>
+              
+              <div class="mt-4">
+                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
+                  <i class="bi bi-github"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top border-secondary-subtle">
+    <div class="container text-center">
+      <p class="small text-muted mb-0">
+        &copy; <span id="year">2026</span> Satish Fulwani. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS Interaction Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
