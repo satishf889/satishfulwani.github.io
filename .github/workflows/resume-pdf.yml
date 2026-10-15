@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: read
 
 jobs:
   generate:
@@ -27,9 +28,21 @@ jobs:
           DBUS_SESSION_BUS_ADDRESS: /dev/null
         run: bash .github/scripts/generate-resume-pdf.sh
       - name: Commit PDF if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          PR_NUMBER="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/pulls" --jq '.[0].number' 2>/dev/null || true)"
+          if [[ -n "$PR_NUMBER" && "$PR_NUMBER" != "null" ]]; then
+            COMMIT_MSG="chore: regenerate resume PDF (PR #${PR_NUMBER})"
+          else
+            COMMIT_MSG="chore: regenerate resume PDF"
+          fi
+
           git add assets/Satish_Fulwani_Resume.pdf
-          git diff --staged --quiet || git commit -m "chore: regenerate resume PDF"
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "$COMMIT_MSG"
+            git push
+          fi
