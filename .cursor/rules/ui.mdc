@@ -28,4 +28,4 @@ alwaysApply: false
 ## Resume page
 
 - Do not edit `@media print` blocks in `resume.html` when changing marketing pages.
-- Marketing homepage resume CTA = PDF download; `resume.html` = print/save PDF in browser.
+- Nav **Resume** on all pages links to `resume.html`. Home hero CTA = **View Resume** → `resume.html`. Stored PDF download lives on the resume page action bar (`assets/Satish_Fulwani_Resume.pdf`); print/save PDF uses browser print on `resume.html`.
