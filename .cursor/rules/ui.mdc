@@ -1,0 +1,31 @@
+---
+description: Portfolio UI tokens, layout rhythm, and accessibility
+globs: "**/*.{html,css,js}"
+alwaysApply: false
+---
+
+# UI rules
+
+## Design system
+
+- Colors and surfaces: CSS variables in `custom.css` (`--accent-primary`, `--accent-secondary`, `--card-bg`, etc.). Dark default; light via `html[data-theme="light"]`.
+- Typography: Plus Jakarta Sans for headings, Inter for body (already wired in `custom.css`).
+- Buttons: `btn-premium`, `btn-premium-outline`. Cards: `glass-card`, `project-card`, `cert-card`.
+- Avoid new inline `style=` for colors; use utilities or new classes in `custom.css`.
+
+## Layout
+
+- Section spacing: `py-section`; alternate with `bg-light` where the plan uses banding.
+- Section titles: `section-title` / `section-title-center`.
+- Scroll offset: sections use `scroll-margin-top` (~85px) for fixed nav.
+
+## Links and motion
+
+- External links: `target="_blank"` and `rel="noopener noreferrer"`.
+- Respect `prefers-reduced-motion` (no hero canvas animation, no reveal transforms when set).
+- Visible `:focus-visible` on interactive controls (nav, buttons, form fields).
+
+## Resume page
+
+- Do not edit `@media print` blocks in `resume.html` when changing marketing pages.
+- Marketing homepage resume CTA = PDF download; `resume.html` = print/save PDF in browser.

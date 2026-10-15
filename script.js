@@ -70,17 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Edge case: if scrolled to the very bottom, activate the contact link
+      // Edge case: if scrolled to the very bottom, activate contact
       if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 20) {
-        const lastLink = navLinks[navLinks.length - 1];
-        if (lastLink) {
-          currentActiveId = lastLink.getAttribute('href').substring(1);
-        }
+        currentActiveId = 'contact';
       }
 
       if (currentActiveId) {
         navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${currentActiveId}`) {
+          const href = link.getAttribute('href');
+          if (!href || !href.startsWith('#')) {
+            link.classList.remove('active');
+            return;
+          }
+          if (href === `#${currentActiveId}`) {
             link.classList.add('active');
           } else {
             link.classList.remove('active');
@@ -104,7 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
+      // Any visible slice is enough. A 12% threshold never fires on tall
+      // sections (the case-study list is taller than the viewport).
+      threshold: 0,
       rootMargin: '0px 0px -50px 0px'
     });
 
@@ -116,9 +120,47 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('active'));
   }
 
+  // Deep links (case studies) must show immediately. The target sits inside a
+  // .reveal block that starts at opacity 0, so hash navigation otherwise lands
+  // on a blank page. Activate ancestors, then align under the fixed nav.
+  const scrollToHashTarget = () => {
+    const id = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    let node = target;
+    while (node) {
+      if (node.classList && node.classList.contains('reveal')) {
+        node.classList.add('active');
+      }
+      node = node.parentElement;
+    }
+
+    target.scrollIntoView();
+  };
+
+  scrollToHashTarget();
+  window.addEventListener('hashchange', scrollToHashTarget);
+
+  // 4b. Scroll-to-top button
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if (scrollTopBtn) {
+    const toggleScrollTop = () => {
+      scrollTopBtn.classList.toggle('is-visible', window.scrollY > 400);
+    };
+    toggleScrollTop();
+    window.addEventListener('scroll', toggleScrollTop, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
   // 5. Interactive Data Network Canvas Animation (Catchy Hero Visual)
   const canvas = document.getElementById('dataNetworkCanvas');
-  if (canvas) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     let width = canvas.offsetWidth;
     let height = canvas.offsetHeight;

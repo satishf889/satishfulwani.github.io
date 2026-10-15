@@ -3,3 +3,4 @@
 #Agent Folder
 .agents
 *.pdf
+*generate_pdf.sh
