@@ -3,4 +3,5 @@
 #Agent Folder
 .agents
 *.pdf
+!assets/Satish_Fulwani_Resume.pdf
 *generate_pdf.sh

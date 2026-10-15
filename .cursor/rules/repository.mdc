@@ -19,7 +19,7 @@ Shared: `custom.css`, `script.js`, `assets/` (images, `Satish_Fulwani_Resume.pdf
 
 ## Resume PDF
 
-`generate_pdf.sh` prints `resume.html` with headless Chrome to `assets/Satish_Fulwani_Resume.pdf`. Homepage “Download Resume” uses the PDF; nav “Resume” can link to `resume.html` on secondary pages.
+`generate_pdf.sh` prints `resume.html` with headless Chrome to `assets/Satish_Fulwani_Resume.pdf`. Nav **Resume** on all pages opens `resume.html`; the resume page action bar offers **Download PDF** (stored file) and print/save via the browser.
 
 ## Contact
 
@@ -29,7 +29,7 @@ Formspree: `https://formspree.io/f/xkodgald` on `index.html` (AJAX in `script.js
 
 - **Role:** Staff Data Engineer, Pune, 8+ years
 - **Employers:** Nagarro (Feb 2023–present), Deloitte (Aug 2021–Feb 2023), Accenture (Oct 2018–Aug 2021)
-- **Site:** https://satishfulwani.github.io
+- **Site:** https://satishfulwani.in (hosted on GitHub Pages at `satishfulwani.github.io`)
 - **LinkedIn:** https://www.linkedin.com/in/satish-fulwani-a831a9150
 - **GitHub:** https://github.com/satishf889
 
