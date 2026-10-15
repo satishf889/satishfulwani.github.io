@@ -4,24 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Case Studies | Satish Fulwani</title>
+  <title>Case Studies | Satish Fulwani</title>
   <meta name="description"
-    content="Deep dives into data engineering projects, ETL pipelines, and machine learning architectures by Satish Fulwani.">
+    content="Deep dives into production data engineering work and personal projects by Satish Fulwani.">
   <meta name="author" content="Satish Fulwani">
   <link rel="icon" type="image/png" href="assets/favicon_v3.png">
-  
-  <!-- Bootstrap CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="custom.css">
-  
 </head>
 
 <body>
 
-  <!-- Navbar -->
   <nav id="navbar" class="navbar navbar-expand-lg navbar-glass fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Satish Fulwani</a>
@@ -30,20 +25,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#skills">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#work">Work</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#awards">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <!-- Download CV Premium Button -->
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
             <a class="btn btn-premium" href="resume.html">
               <i class="bi bi-file-earmark-person"></i> Resume
             </a>
           </li>
-          <!-- Theme Toggle Button -->
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
             <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
               <i class="bi bi-sun"></i>
@@ -54,114 +44,170 @@
     </div>
   </nav>
 
-  <!-- Blog Header Section -->
   <header class="blog-header reveal">
     <div class="container text-center">
-      <div class="badge bg-purple-subtle text-purple mb-3 px-3 py-2 fs-7 fw-semibold rounded-pill" style="background: rgba(168, 85, 247, 0.15) !important; color: var(--accent-secondary) !important;">Deep Dives</div>
-      <h1 class="display-4 fw-bold mb-3">Project Case Studies</h1>
+      <div class="badge badge-open mb-3 px-3 py-2 fs-7 fw-semibold rounded-pill">Case studies</div>
+      <h1 class="display-4 fw-bold mb-3">Work &amp; Projects</h1>
       <p class="lead text-secondary max-w-xl mx-auto">
-        Detailed technical write-ups of my core data engineering projects, pipeline architectures, and analytics solutions.
+        Production platform work first, then personal builds and research.
       </p>
     </div>
   </header>
 
-  <!-- Blog Posts Section -->
-  <section class="py-section reveal">
+  <section class="py-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          
-          <!-- Project 1 -->
-          <article id="project-1" class="blog-post glass-card p-4 p-md-5">
-            <h2 class="blog-title">Football Match Data Scraper &amp; ETL</h2>
-            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Beautiful Soup | Pandas | Web Scraping</div>
+
+          <p class="text-uppercase text-muted small fw-semibold letter-spacing-wide mb-4">Professional work</p>
+
+          <article id="work-nagarro-consulting" class="blog-post glass-card p-4 p-md-5">
+            <h2 class="blog-title">Consulting data platform</h2>
+            <div class="blog-meta"><i class="bi bi-building me-1"></i> Nagarro · Consulting · AWS, Terraform, LangChain, Kafka, Snowflake</div>
             <div class="blog-content">
-              <p>This project is an automated web scraping and transformation pipeline designed to retrieve and process football match statistics. The goal was to build a reliable mechanism to extract unstructured web data and transform it into a clean, queryable format.</p>
-              
-              <h4>Architecture &amp; Implementation</h4>
+              <p>Delivered a consulting engagement spanning Terraform-managed AWS infrastructure, a production LangChain RAG bot, realtime Kafka streaming into Snowflake, and agent skills that automate engineering tasks.</p>
+              <h4>Highlights</h4>
               <ul>
-                <li><strong>Extraction:</strong> Built a custom web scraper using Python and Beautiful Soup to navigate and extract match data dynamically.</li>
-                <li><strong>Transformation:</strong> Utilized Pandas to handle structural inconsistencies, clean missing data points, and normalize team and player metrics.</li>
-                <li><strong>Load:</strong> Exported the refined records into a clean, standardized CSV format, ready for downstream analysis or visualization tools.</li>
+                <li>Provisioned and maintained AWS workloads with <strong>Terraform</strong> (Lambda, S3, API Gateway).</li>
+                <li>Deployed a <strong>RAG chatbot</strong> on <strong>Snowflake Cortex AI</strong> with <strong>LangChain</strong> parsing into <strong>Snowflake vector tables</strong>.</li>
+                <li>Built <strong>Kafka</strong> event flows with <strong>Lambda</strong> processing into <strong>Snowflake</strong> for realtime analytics.</li>
+                <li>Created <strong>agent skills and automations</strong> to speed up delivery, reviews, and ops.</li>
               </ul>
-              
-              <p>The pipeline demonstrated the ability to handle messy HTML structures and turn them into actionable data sets with minimal manual intervention.</p>
-              
-              <div class="mt-4">
-                <a href="https://github.com/satishf889/football-match-data-processing.git" class="btn btn-sm btn-premium" target="_blank">
-                  <i class="bi bi-github"></i> View Source Code
-                </a>
-              </div>
+              <a href="index.html#work" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
             </div>
           </article>
 
-          <!-- Project 2 -->
+          <article id="work-nagarro" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Azure &amp; Databricks modernization</h2>
+            <div class="blog-meta"><i class="bi bi-building me-1"></i> Nagarro · Insurance · Azure Data Factory, Databricks, PySpark</div>
+            <div class="blog-content">
+              <p>Led modernization of legacy on-premises pipelines onto Azure for a major insurance program: ADF orchestration, Databricks ETL, and reliable batch ETL/ELT at scale.</p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>Migrated <strong>1+ TB</strong> to Azure SQL and Snowflake with <strong>zero downtime</strong>; led a team of <strong>3</strong>.</li>
+                <li>Implemented <strong>Azure Data Factory</strong> orchestration and <strong>Databricks</strong> / <strong>PySpark</strong> transformation pipelines.</li>
+                <li>Enforced <strong>data governance</strong>, quality SLAs, and observability on production Azure workloads.</li>
+              </ul>
+              <a href="index.html#work" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+            </div>
+          </article>
+
+          <article id="work-accenture" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Serverless media migration</h2>
+            <div class="blog-meta"><i class="bi bi-building me-1"></i> Accenture · Media &amp; Entertainment · Lambda, SQS, DynamoDB, S3</div>
+            <div class="blog-content">
+              <p>Designed an economical AWS migration architecture for ingesting and processing on-prem media at scale using serverless, fault-tolerant workflows.</p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>Event-driven pipelines with <strong>Lambda</strong>, <strong>SQS</strong>, and DynamoDB.</li>
+                <li>Automated framework to transfer <strong>1.5 million</strong> media assets safely.</li>
+                <li>Compression/upload utility for 60GB packages into the DAM system.</li>
+                <li>Kept migration overhead near <strong>$100</strong> by maximizing serverless and minimizing EC2.</li>
+              </ul>
+              <a href="index.html#work" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+            </div>
+          </article>
+
+          <article id="work-deloitte" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">AWS data lake &amp; reporting</h2>
+            <div class="blog-meta"><i class="bi bi-building me-1"></i> Deloitte · Nutrition · Glue, Athena, S3, SageMaker</div>
+            <div class="blog-content">
+              <p>Delivered big-data solutions tied to business needs: data quality fixes, optimized processing, and reliable lakehouse patterns on AWS.</p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>ETL on the data lake with <strong>Glue</strong>, crawlers, and <strong>Athena</strong>.</li>
+                <li>Hadoop sandboxes with Glue Dev Endpoints and SageMaker notebooks.</li>
+                <li>Pipelines routing data into multiple ML models.</li>
+                <li><strong>Near real-time</strong> reporting for executive decision-making.</li>
+              </ul>
+              <a href="index.html#work" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+            </div>
+          </article>
+
+          <p class="text-uppercase text-muted small fw-semibold letter-spacing-wide mt-5 mb-4">Personal projects</p>
+
+          <article id="project-travel-assistant" class="blog-post glass-card p-4 p-md-5">
+            <h2 class="blog-title">AI Travel Planning Assistant</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python · LangChain · Azure OpenAI · ChromaDB · Streamlit · Docker</div>
+            <div class="blog-content">
+              <p>Context-aware AI assistant for trip planning (Singapore focus), combining a document knowledge base with real-time data via MCP tools.</p>
+              <h4>Highlights</h4>
+              <ul>
+                <li><strong>TravelAgent</strong> orchestrator with intent classification, multi-turn context, and dual paths: <strong>RAG</strong> (ChromaDB) and <strong>MCP</strong> (weather, currency).</li>
+                <li><strong>Streamlit</strong> UI; responses attribute knowledge-base facts, live MCP data, and LLM synthesis.</li>
+                <li><strong>Azure OpenAI</strong> LLM, local HuggingFace embeddings, <strong>Docker Compose</strong> deployment; pytest test suite.</li>
+              </ul>
+              <a href="https://github.com/satishf889/AI-TRAVEL-PLANNING-ASSISTANT" class="btn btn-sm btn-premium me-2" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i> View Source Code
+              </a>
+              <a href="index.html#projects" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+            </div>
+          </article>
+
+          <article id="project-1" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Football Match Data Scraper &amp; ETL</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python · Beautiful Soup · Pandas · Web Scraping</div>
+            <div class="blog-content">
+              <p>Automated web scraping and transformation pipeline to retrieve football match statistics and export clean CSV for analysis.</p>
+              <h4>Architecture</h4>
+              <ul>
+                <li><strong>Extraction:</strong> Beautiful Soup scraper for dynamic match pages.</li>
+                <li><strong>Transform:</strong> Pandas normalization of team and player metrics.</li>
+                <li><strong>Load:</strong> Standardized CSV for downstream tools.</li>
+              </ul>
+              <a href="https://github.com/satishf889/football-match-data-processing.git" class="btn btn-sm btn-premium" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i> View Source Code
+              </a>
+            </div>
+          </article>
+
           <article id="project-2" class="blog-post glass-card p-4 p-md-5 mt-5">
             <h2 class="blog-title">COVID-19 India Data Analysis</h2>
-            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Pandas | API Integration | Matplotlib</div>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python · Pandas · API Integration · Matplotlib</div>
             <div class="blog-content">
-              <p>A clean data engineering and visualization pipeline that automatically extracts live COVID-19 updates via REST APIs and compiles the historical data into an interactive representation.</p>
-              
-              <h4>Pipeline Details</h4>
+              <p>End-to-end flow from a public REST API to processed time series and an animated racing bar chart.</p>
+              <h4>Pipeline</h4>
               <ul>
-                <li><strong>API Integration:</strong> Implemented a reliable Python script to fetch live JSON payloads from a public REST API.</li>
-                <li><strong>Data Processing:</strong> Processed historical vectors and time-series data using Pandas, dealing with rolling averages and anomaly correction.</li>
-                <li><strong>Visualization:</strong> Compiled the processed data into an interactive racing bar chart representation using Matplotlib and data animation techniques.</li>
+                <li>Reliable JSON ingestion from a live API.</li>
+                <li>Pandas processing with rolling averages and anomaly handling.</li>
+                <li>Matplotlib animation for the final visualization.</li>
               </ul>
-              
-              <p>This project highlights the ability to build an end-to-end flow from raw API data ingestion to a polished, user-facing analytical output.</p>
-              
-              <div class="mt-4">
-                <a href="https://github.com/satishf889/COVID19-india-analysis.git" class="btn btn-sm btn-premium" target="_blank">
-                  <i class="bi bi-github"></i> View Source Code
-                </a>
-              </div>
+              <a href="https://github.com/satishf889/COVID19-india-analysis.git" class="btn btn-sm btn-premium" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i> View Source Code
+              </a>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article id="project-3" class="blog-post glass-card p-4 p-md-5 mt-5">
-            <h2 class="blog-title">Databricks Spark ETL Pipeline</h2>
-            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Apache Spark | Databricks | SQL</div>
+          <article id="project-event-platform" class="blog-post glass-card p-4 p-md-5 mt-5">
+            <h2 class="blog-title">Event management platform</h2>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Personal · AI chat · Attendance · Networking</div>
             <div class="blog-content">
-              <p>An end-to-end data warehouse extraction and processing pipeline built entirely on the Databricks platform, showcasing big data scaling capabilities using PySpark.</p>
-              
-              <h4>Key Engineering Decisions</h4>
+              <p>Built a scalable event management system where attendees use AI chatbots, create connections with other participants, mark attendance, and network during events.</p>
+              <h4>Highlights</h4>
               <ul>
-                <li><strong>Distributed Processing:</strong> Used Apache Spark to scale big data transformations across multiple worker nodes, drastically reducing processing time compared to single-node pandas.</li>
-                <li><strong>Schema Management:</strong> Handled complex structural schema overrides and enforced data quality checks before the write phase.</li>
-                <li><strong>Cloud Integration:</strong> Exported the final processed data sets securely into cloud SQL nodes for reporting integration.</li>
+                <li><strong>AI chatbots</strong> for attendee support and event information.</li>
+                <li>User <strong>connections</strong> and networking features across events.</li>
+                <li><strong>Attendance</strong> tracking integrated into the event flow.</li>
+                <li>Architecture designed for growth, built with <strong>AI-assisted development</strong> for rapid iteration.</li>
               </ul>
-              
-              <p>This implementation proves a strong grasp of distributed computing principles and the modern Databricks lakehouse architecture.</p>
-              
-              <div class="mt-4">
-                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
-                  <i class="bi bi-github"></i> View Source Code
-                </a>
-              </div>
+              <a href="index.html#projects" class="btn btn-sm btn-premium-outline"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
             </div>
           </article>
 
-          <!-- Project 4 -->
           <article id="project-4" class="blog-post glass-card p-4 p-md-5 mt-5">
             <h2 class="blog-title">Fruit Classifier | Transfer Learning</h2>
-            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python | Keras | AWS | Deep Learning</div>
+            <div class="blog-meta"><i class="bi bi-tags-fill me-1"></i> Python · Keras · AWS · Deep Learning</div>
             <div class="blog-content">
-              <p>A deep learning research project completed as part of my MTech thesis. This project integrates pre-trained transfer learning architectures to build a highly accurate image classification model.</p>
-              
-              <h4>Technical Approach</h4>
+              <p>MTech thesis project using pre-trained CNN architectures on AWS for image classification.</p>
+              <h4>Approach</h4>
               <ul>
-                <li><strong>Transfer Learning:</strong> Leveraged existing advanced architectures (like ResNet/VGG) through Keras to accelerate training and improve accuracy with limited data.</li>
-                <li><strong>Cloud Infrastructure:</strong> Set up data preprocessing pipelines and model training environments on AWS cloud nodes to utilize GPU compute efficiently.</li>
-                <li><strong>Model Tuning:</strong> Constructed precise classification layers and fine-tuned hyperparameters to achieve the optimal validation accuracy.</li>
+                <li>Transfer learning with Keras (ResNet/VGG-style backbones).</li>
+                <li>Preprocessing and training on AWS GPU compute.</li>
+                <li>Fine-tuned classification head and hyperparameters.</li>
               </ul>
-              
-              <div class="mt-4">
-                <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank">
-                  <i class="bi bi-github"></i> View Source Code
-                </a>
-              </div>
+              <a href="https://github.com/satishf889/fruit_classifier_using_transfer_learning.git" class="btn btn-sm btn-premium" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i> View Source Code
+              </a>
             </div>
           </article>
 
@@ -170,7 +216,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-4 border-top border-secondary-subtle">
     <div class="container text-center">
       <p class="small text-muted mb-0">
@@ -179,10 +224,11 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
+  <button id="scrollTop" class="scroll-top-btn" type="button" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Custom JS Interaction Script -->
   <script src="script.js"></script>
 </body>
 

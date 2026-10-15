@@ -110,10 +110,16 @@ a:hover {
   color: var(--accent-secondary);
 }
 
-/* Theme Transition Smoothness */
-body *,
-body *::before,
-body *::after {
+/* Theme transition (avoid universal * transitions — hurts perf and motion) */
+body,
+.navbar-glass,
+.glass-card,
+.timeline-content,
+.cert-card,
+.form-control,
+.btn-premium,
+.btn-premium-outline,
+.theme-toggle-btn {
   transition: background-color var(--transition-speed) ease,
     border-color var(--transition-speed) ease,
     color var(--transition-speed) ease,
@@ -388,6 +394,132 @@ body *::after {
   box-shadow: var(--shadow-lg), var(--glow-shadow);
 }
 
+.glass-card-static:hover {
+  transform: none;
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+/* Hero stats */
+.badge-open {
+  background: rgba(var(--accent-primary-rgb), 0.15);
+  color: var(--accent-primary);
+}
+
+.stat-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--accent-primary);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Selected work cards */
+.work-card-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.work-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.work-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.work-card-highlights {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.work-card-highlights li {
+  margin-bottom: 0.35rem;
+}
+
+.work-card-footer {
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.project-card-compact .project-body {
+  padding: 1.25rem;
+}
+
+.project-card-compact .project-footer {
+  padding: 1rem 1.25rem;
+}
+
+.canvas-hero {
+  max-width: 450px;
+  height: 380px;
+}
+
+.canvas-hero-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.contact-form-max {
+  max-width: 500px;
+}
+
+.letter-spacing-wide {
+  letter-spacing: 0.08em;
+}
+
+/* Focus visible */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .profile-img-wrapper::before {
+    animation: none;
+  }
+
+  .glass-card:hover,
+  .cert-card:hover {
+    transform: none;
+  }
+}
+
 /* Tech Stack Chips */
 .tech-category-card {
   height: 100%;
@@ -632,6 +764,60 @@ body *::after {
   font-size: 1.2rem;
 }
 
+.scroll-top-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1040;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    visibility var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.scroll-top-btn i {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: var(--glow-shadow);
+}
+
+@media print {
+  .scroll-top-btn {
+    display: none !important;
+  }
+}
+
 /* Custom spacing and utility */
 .py-section {
   padding: 6.5rem 0;
@@ -732,6 +918,7 @@ body *::after {
   margin-bottom: 4rem;
   padding-bottom: 4rem;
   border-bottom: 1px solid var(--border-color);
+  scroll-margin-top: 96px;
 }
 
 .blog-post:last-child {

@@ -1,0 +1,36 @@
+---
+description: Portfolio repo layout, deploy, and content facts
+alwaysApply: true
+---
+
+# satishfulwani.github.io
+
+Static personal portfolio. No build step. GitHub Pages deploys the repo root via `.github/workflows/static.yml` on push to `main`.
+
+## Pages
+
+| File | Role |
+|------|------|
+| `index.html` | Single-page marketing site (hero → work → projects → experience → about → credentials → contact) |
+| `projects.html` | Case studies; work anchors first, then personal projects |
+| `resume.html` | Printable resume; `@media print` rules must stay intact |
+
+Shared: `custom.css`, `script.js`, `assets/` (images, `Satish_Fulwani_Resume.pdf`).
+
+## Resume PDF
+
+`generate_pdf.sh` prints `resume.html` with headless Chrome to `assets/Satish_Fulwani_Resume.pdf`. Homepage “Download Resume” uses the PDF; nav “Resume” can link to `resume.html` on secondary pages.
+
+## Contact
+
+Formspree: `https://formspree.io/f/xkodgald` on `index.html` (AJAX in `script.js`).
+
+## Facts (do not invent)
+
+- **Role:** Staff Data Engineer, Pune, 8+ years
+- **Employers:** Nagarro (Feb 2023–present), Deloitte (Aug 2021–Feb 2023), Accenture (Oct 2018–Aug 2021)
+- **Site:** https://satishfulwani.github.io
+- **LinkedIn:** https://www.linkedin.com/in/satish-fulwani-a831a9150
+- **GitHub:** https://github.com/satishf889
+
+Keep primary nav markup identical across all three HTML pages (Work, Experience, About, Contact + Resume button + theme toggle).

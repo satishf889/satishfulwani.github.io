@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume — Satish Fulwani</title>
+  <title>Resume - Satish Fulwani</title>
   <meta name="description" content="Printable professional resume of Satish Fulwani, Staff Data Engineer.">
   <link rel="icon" type="image/png" href="assets/favicon_v3.png">
 
@@ -78,6 +78,10 @@
       align-items: center;
     }
 
+    #print-contacts {
+      display: none;
+    }
+
     .resume-date {
       color: var(--accent-primary);
       font-weight: 600;
@@ -102,6 +106,10 @@
       #navbar,
       .action-bar-spacer {
         display: none !important;
+      }
+
+      #print-contacts {
+        display: block !important;
       }
 
       .resume-container {
@@ -153,7 +161,19 @@
       }
 
       .resume-item {
-        margin-bottom: 6px !important;
+        margin-bottom: 4px !important;
+      }
+
+      .resume-container .mt-2 {
+        margin-top: 0.2rem !important;
+      }
+
+      .resume-container .mt-3 {
+        margin-top: 0.35rem !important;
+      }
+
+      .resume-container .mb-4 {
+        margin-bottom: 0.45rem !important;
       }
 
       .resume-item-title {
@@ -280,13 +300,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#skills">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#work">Work</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#awards">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-premium" href="assets/Satish_Fulwani_Resume.pdf" download="Satish_Fulwani_Resume.pdf">
+              <i class="bi bi-file-earmark-person"></i> Resume
+            </a>
+          </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
             <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
               <i class="bi bi-sun"></i>
@@ -317,23 +339,13 @@
       <div class="row align-items-center">
         <!-- Contacts (Left) -->
         <div class="col-md-4 text-center text-md-start">
-          <div class="small text-secondary">
-            <div class="mb-1"><i class="bi bi-globe me-2"></i><a
-                href="https://satishf889.github.io/satishfulwani.github.io" target="_blank"
-                class="text-secondary text-decoration-none">satishfulwani.com</a></div>
-            <div class="mb-1"><i class="bi bi-github me-2"></i><a href="https://github.com/satishf889" target="_blank"
-                class="text-secondary text-decoration-none">github.com/satishf889</a></div>
-            <div class="mb-1"><i class="bi bi-envelope-fill me-2"></i><a href="mailto:satish.fulwani63@gmail.com"
-                class="text-secondary text-decoration-none">satish.fulwani63@gmail.com</a></div>
-            <div class="mb-1"><i class="bi bi-telephone-fill me-2"></i><a href="tel:+919145175111"
-                class="text-secondary text-decoration-none">+91-9145175111</a></div>
-          </div>
+          <div class="small text-secondary" id="print-contacts"></div>
         </div>
         <!-- Name & Titles (Middle) -->
         <div class="col-md-5 text-center text-md-start mt-3 mt-md-0">
           <h1 class="display-6 fw-bold mb-1 header-name" style="color: var(--accent-primary);">SATISH FULWANI</h1>
-          <h6 class="text-secondary fw-semibold mb-2">Staff Data Engineer | Data Science | 3x AWS Certified</h6>
-          <p class="text-muted small mb-0">MTech in Data Science and Engineering from BITS, Pilani</p>
+          <h6 class="text-secondary fw-semibold mb-2">Senior Data Engineer | Snowflake, Kafka, Azure &amp; AWS | 3x AWS Certified</h6>
+          <p class="text-muted small mb-0">Pune, India · MTech Data Science &amp; Engineering, BITS Pilani</p>
         </div>
         <!-- Profile Picture (Right) -->
         <div class="col-md-3 text-center text-md-end mt-3 mt-md-0 no-print">
@@ -351,23 +363,25 @@
         <div class="mb-4">
           <h3 class="resume-section-title">Summary</h3>
           <p class="text-secondary mb-2" style="text-align: justify;">
-            Experienced and versatile <strong>Staff Data Engineer</strong> with 7+ years of delivering scalable,
-            cloud-native data solutions across diverse industries (Media &amp; Entertainment, Insurance, Nutrition).
-            Proven expertise in architecting end-to-end data pipelines using <strong>Azure Data Factory, Databricks,
-              PySpark, Snowflake, and AWS services</strong> (Glue, Lambda, S3, DynamoDB). Adept in Generative AI
-            engineering, specializing in building production-grade <strong>RAG chatbots</strong> and semantic search
-            engines using <strong>Snowflake Cortex AI</strong>, <strong>Snowflake Vector Tables</strong>, and
-            <strong>LangChain</strong> workflow design.
+            <strong>Staff Data Engineer</strong> with <strong>8+ years</strong> building reliable, cloud-native data
+            platforms. Seeking <strong>Senior Data Engineer</strong> roles at large investment firms. Strengths include
+            <strong>Snowflake</strong> warehousing, <strong>realtime pipelines</strong> (Kafka, Lambda), batch ETL/ELT on
+            <strong>Azure Data Factory</strong> and <strong>Databricks</strong>, and production <strong>GenAI/RAG</strong>
+            on <strong>Snowflake Cortex AI</strong> and <strong>LangChain</strong>.
           </p>
           <p class="text-secondary mb-2" style="text-align: justify;">
-            In my most recent role, I led a team of <strong>3 data engineers</strong> to successfully modernize a legacy
-            data platform by migrating it to <strong>Azure and Snowflake</strong>. I bring a strong understanding of,
-            ETL/ELT workflows, and automation strategies that enable organizations to make data-driven decisions faster
-            and with greater accuracy.
+            Led a team of <strong>3</strong> to modernize a legacy platform on <strong>Azure and Snowflake</strong>,
+            migrating <strong>1+ TB</strong> with <strong>zero downtime</strong> for a major <strong>regulated insurance</strong>
+            program. Delivered agent <strong>skills and automations</strong> and event-driven streaming into Snowflake for
+            analytics. Mentor engineers; partner with product and business on data quality and SLAs.
+          </p>
+          <p class="text-secondary mb-2" style="text-align: justify;">
+            Proven delivery in regulated, high-volume environments (insurance, media, nutrition); comfortable partnering
+            with business and compliance stakeholders on <strong>data governance</strong>, quality SLAs, and platform
+            reliability.
           </p>
           <p class="text-secondary mb-0" style="text-align: justify;">
-            I’m passionate about driving engineering excellence, mentoring junior team members, and collaborating with
-            cross-functional stakeholders to align data strategy with business goals.
+            Rapidly adapts to new stacks, tooling, and domains - learn, unlearn, and relearn is a working principle.
           </p>
         </div>
 
@@ -376,30 +390,30 @@
           <h3 class="resume-section-title">Technical Skills</h3>
           <div class="small text-secondary">
             <div class="mb-2">
-              <strong>FRAMEWORKS &amp; GENAI:</strong><br>Spark, Databricks, Hadoop, Pandas, NumPy, Keras,
-              <strong>Snowflake Cortex AI, LangChain, Document Parsing, Text Chunking</strong>
+              <strong>DATA &amp; STREAMING:</strong><br><strong>Snowflake</strong>, <strong>Kafka</strong>, PySpark,
+              Databricks, SQL, Azure Data Factory, Pandas, data modeling
             </div>
             <div class="mb-2">
-              <strong>CLOUD &amp; DATA WAREHOUSING:</strong><br>AWS, Azure, <strong>Snowflake</strong>, Databricks
-              Lakehouse, Spark (PySpark), SQL, Jenkins CI/CD
+              <strong>CLOUD:</strong><br>AWS (Lambda, Glue, S3, API Gateway, DynamoDB), Azure (ADF, Databricks, Synapse,
+              Container Apps), <strong>Terraform</strong>, <strong>Kubernetes</strong>, Jenkins CI/CD, Serverless
             </div>
             <div class="mb-2">
-              <strong>DATABASES &amp; AI:</strong><br>PostgreSQL, DynamoDB (NoSQL), <strong>Snowflake native Vector
-                Search</strong>, Vector DBs (Chroma/Pinecone), CNNs, ML Models
+              <strong>GENAI &amp; TOOLING:</strong><br>Python, <strong>LangChain</strong>, RAG, Snowflake Cortex AI,
+              vector search, agent skills &amp; automations, data governance &amp; lineage
             </div>
           </div>
         </div>
 
-        <!-- Co-Curricular -->
+        <!-- Awards & Recognition -->
         <div class="mb-4">
-          <h3 class="resume-section-title">Co-Curricular</h3>
+          <h3 class="resume-section-title">Awards &amp; Recognition</h3>
           <ul class="small text-secondary ps-3 mb-0">
-            <li class="mb-1">Awarded BRIGHTEST MIND award by Nagarro.</li>
-            <li class="mb-1">Won 2nd Prize in Accenture AI Hackathon conducted in <span class="resume-date">August,
-                2019</span></li>
-            <li class="mb-1">Twice received the APEX Award for Profitability and Delivery</li>
-            <li class="mb-1">Developed Mail Automation System for Human Resource Team for sending bulk mail using Python
-            </li>
+            <li class="mb-1"><strong>Brightest Mind</strong> - Nagarro's company-wide engineering excellence award.</li>
+            <li class="mb-1">2nd place, Accenture AI Hackathon (<span class="resume-date">Aug 2019</span>) - AI solution
+              pitched and demoed to senior leadership.</li>
+            <li class="mb-1"><strong>APEX Award</strong> x2 - Accenture's highest performance award, for Delivery and for
+              Margin.</li>
+            <li class="mb-1">Built HR mail automation system in Python, adopted company-wide by the HR team.</li>
           </ul>
         </div>
 
@@ -408,10 +422,10 @@
           <h3 class="resume-section-title">Certifications</h3>
           <ul class="small text-secondary ps-3 mb-0">
             <li class="mb-1">GCP Certified Cloud Digital Leader | GCP | <span class="resume-date">Dec'22</span></li>
-            <li class="mb-1">AWS Certified Machine Learning- Speciality | AWS | <span class="resume-date">Mar'20</span>
+            <li class="mb-1">AWS Certified Machine Learning - Specialty | AWS | <span class="resume-date">Mar'20</span>
             </li>
             <li class="mb-1">AWS Certified Cloud Practitioner | AWS | <span class="resume-date">Mar'20</span></li>
-            <li class="mb-1">AWS Certified Developer- Associate | AWS | <span class="resume-date">Sep'19</span></li>
+            <li class="mb-1">AWS Certified Developer - Associate | AWS | <span class="resume-date">Sep'19</span></li>
             <li class="mb-1">Machine Learning Advanced Nanodegree | Udacity | <span class="resume-date">Jan'19</span>
             </li>
             <li class="mb-1">Machine Learning Foundation Nanodegree | Udacity | <span class="resume-date">Apr'18</span>
@@ -427,14 +441,14 @@
             <div class="fw-bold small text-primary">BITS PILANI</div>
             <div class="small text-secondary">MTECH DATA SCIENCE &amp; ENGINEERING | <span
                 class="resume-date">APR'21-APR'23</span> | PILANI, RJ</div>
-            <div class="small text-muted">CGPI – 7.18/10</div>
+            <div class="small text-muted">CGPI - 7.18/10</div>
           </div>
 
           <div class="mb-0">
             <div class="fw-bold small text-primary">MUMBAI UNIVERSITY</div>
             <div class="small text-secondary">B.E. COMPUTER SCIENCE | <span class="resume-date">JUN'14-JUN'18</span> |
               VESIT, MUMBAI, MH</div>
-            <div class="small text-muted">CGPI – 7.19/10</div>
+            <div class="small text-muted">CGPI - 7.19/10</div>
           </div>
         </div>
 
@@ -449,136 +463,160 @@
 
           <!-- Nagarro -->
           <div class="resume-item">
-            <span class="resume-item-title">Role: STAFF DATA ENGINEER</span><br>
-            <span class="resume-item-subtitle">Nagarro India Pvt Ltd | <span class="resume-date">Feb'23 - Present</span>
-              | Pune, IN</span>
-            <div class="small text-secondary mt-1">
-              <div><strong>Industry:</strong> Asia’s Largest Insurance Company</div>
-              <div><strong>Project:</strong> End-to-End Data Pipeline Implementation in Azure Cloud &amp; Document
-                Parsing Framework</div>
-              <div><strong>Technologies:</strong> Azure Databricks, Spark (PySpark), Python, Azure Data Factory, Azure
-                Synapse, Azure Storage, SQL Server, AWS, Snowflake, LangChain, Vector DB</div>
+            <span class="resume-item-title">Nagarro India Pvt Ltd</span><br>
+            <span class="resume-item-subtitle"><span class="resume-date">Feb'23 - Present</span> | Pune, IN</span>
+
+            <div class="mt-2">
+              <span class="resume-item-title">Role: STAFF DATA ENGINEER</span>
+              <div class="small text-secondary mt-1">
+                <div><strong>Industry:</strong> Large Consultancy Firm</div>
+                <div><strong>Project:</strong> AWS Data Platform, GenAI Bot, Realtime Streaming &amp; Agent Automations
+                </div>
+                <div><strong>Technologies:</strong> AWS, Terraform, LangChain, Kafka, Lambda, Snowflake Cortex AI, S3,
+                  API Gateway, Python</div>
+              </div>
+              <p class="small text-secondary mt-2" style="text-align: justify;">
+                Led architecture and delivery of a Terraform-managed AWS data platform, a production GenAI bot, and
+                realtime Kafka streaming. Mentored engineers and drove adoption of agent-tooling patterns across the team.
+              </p>
+              <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+              <ul class="small text-secondary ps-3 mb-0">
+                <li>Designed and provisioned end-to-end AWS infrastructure with <strong>Terraform</strong> (Lambda, S3,
+                  API Gateway, IAM policies), ensuring reproducible, secure deployments.</li>
+                <li>Architected and deployed a production <strong>RAG chatbot</strong> on <strong>Snowflake Cortex
+                    AI</strong>; engineered <strong>LangChain</strong>-driven document parsing, chunking, and embedding
+                  into <strong>Snowflake native vector tables</strong> for semantic retrieval.</li>
+                <li>Built a <strong>Kafka</strong> event-ingestion layer with <strong>Lambda</strong> consumer workers
+                  curating near-real-time datasets in <strong>Snowflake</strong> for analytics and downstream BI
+                  dashboards.</li>
+                <li>Designed and published reusable <strong>agent skills and automations</strong> covering code review,
+                  documentation, and operational runbooks - measurably reducing team delivery cycle time.</li>
+                <li>Mentored engineers on GenAI patterns and RAG design; established team-wide best practices for
+                  agent tooling and observability.</li>
+              </ul>
             </div>
-            <p class="small text-secondary mt-2" style="text-align: justify;">
-              Led a key project to modernize and migrate legacy data pipelines to Azure Cloud. This project aimed to
-              improve processing efficiency and scalability by designing new ETL/ELT workflows using Azure Data Factory
-              for orchestration and Databricks for ETL operations. The migration enabled near real-time data analytics
-              and better decision-making for the business.
-            </p>
-            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
-            <ul class="small text-secondary ps-3 mb-0">
-              <li>Architected and deployed an intelligent GenAI <strong>RAG chatbot</strong> powered by
-                <strong>Snowflake Cortex AI</strong> (LLMs &amp; Search Services) to retrieve and summarize insights
-                from complex business documents.</li>
-              <li>Engineered an automated <strong>unstructured file parsing, text chunking, and metadata extraction
-                  pipeline</strong> using <strong>LangChain</strong>, indexing high-dimensional embeddings directly into
-                <strong>Snowflake's native Vector Tables</strong>.</li>
-              <li>Designed cloud data pipelines integrating <strong>AWS services</strong> (S3, Lambda, API Gateway) and
-                <strong>Snowflake data warehouse</strong> to enable real-time analytical queries and business
-                intelligence dashboards.</li>
-              <li>Migrated <strong>1+ TB</strong> of legacy databases to <strong>Azure SQL DB</strong> and
-                <strong>Snowflake</strong> with zero downtime, redesigning ETL/ELT workflows.</li>
-            </ul>
+
+            <div class="mt-3">
+              <span class="resume-item-title">Role: ASSOCIATE STAFF DATA ENGINEER</span>
+              <div class="small text-secondary mt-1">
+                <div><strong>Industry:</strong> Asia’s Largest Insurance Company</div>
+                <div><strong>Project:</strong> Azure Cloud Data Pipeline Modernization</div>
+                <div><strong>Technologies:</strong> Azure Data Factory, Databricks, PySpark, Azure SQL, Snowflake</div>
+              </div>
+              <p class="small text-secondary mt-2" style="text-align: justify;">
+                Led a team of 3 to modernize Asia's largest insurance company's on-premises data estate onto Azure,
+                delivering reliable pipelines, regulatory-grade governance, and executive analytics.
+              </p>
+              <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+              <ul class="small text-secondary ps-3 mb-0">
+                <li>Led a <strong>team of 3</strong> to migrate <strong>1+ TB</strong> of legacy insurance data to
+                  <strong>Azure SQL</strong> and <strong>Snowflake</strong> with <strong>zero downtime</strong>,
+                  coordinating cutovers across business and ops stakeholders.</li>
+                <li>Designed and delivered <strong>Azure Data Factory</strong> orchestration pipelines and
+                  <strong>Databricks</strong> / <strong>PySpark</strong> ETL workflows processing large-scale,
+                  regulated insurance data at production SLAs.</li>
+                <li>Implemented data quality frameworks, pipeline observability, and lineage tracking across
+                  <strong>20+ ADF pipelines</strong> to meet regulatory compliance and audit requirements.</li>
+                <li>Partnered with solution architects and business stakeholders to translate complex insurance-domain
+                  requirements into reliable, versioned <strong>data contracts</strong> and <strong>SLA-bound</strong>
+                  delivery.</li>
+                <li>Enforced <strong>data governance</strong> policies and access controls across Azure and Snowflake
+                  workloads; reduced pipeline incident response time through alerting and runbook automation.</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Deloitte -->
           <div class="resume-item mt-3">
-            <span class="resume-item-title">Role: DATA ENGINEER CONSULTANT</span><br>
-            <span class="resume-item-subtitle">Deloitte ILLP | <span class="resume-date">Aug'21 - Feb'23</span> |
-              Mumbai, IN</span>
-            <div class="small text-secondary mt-1">
-              <div><strong>Industry:</strong> Dutch Nutrition Company</div>
-              <div><strong>Project:</strong> Solving Complex Big Data Issues Based on Business Needs</div>
-              <div><strong>Technologies:</strong> Spark (PySpark), Python, AWS Glue, Hadoop, AWS S3, Microsoft Dynamics
-                (CRM)</div>
+            <span class="resume-item-title">Deloitte ILLP</span><br>
+            <span class="resume-item-subtitle"><span class="resume-date">Aug'21 - Feb'23</span> | Mumbai, IN</span>
+
+            <div class="mt-2">
+              <span class="resume-item-title">Role: DATA ENGINEER CONSULTANT</span>
+              <div class="small text-secondary mt-1">
+                <div><strong>Industry:</strong> Dutch Nutrition Company</div>
+                <div><strong>Project:</strong> Solving Complex Big Data Issues Based on Business Needs</div>
+                <div><strong>Technologies:</strong> Spark (PySpark), Python, AWS Glue, Hadoop, AWS S3, Microsoft Dynamics
+                  (CRM)</div>
+              </div>
+              <p class="small text-secondary mt-2" style="text-align: justify;">
+                Aligned data engineering with evolving business needs: data quality, optimized Glue/Athena/S3 lakehouse
+                patterns, and SageMaker notebooks for ML workflows serving a global nutrition client.
+              </p>
+              <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+              <ul class="small text-secondary ps-3 mb-0">
+                <li>Architected and delivered ETL on <strong>AWS Data Lake</strong> (<strong>Glue</strong>, Crawlers,
+                  <strong>Athena</strong>) and ML-bound pipelines feeding multiple production models.</li>
+                <li>Delivered near-real-time executive dashboards; enabled <strong>SageMaker</strong> ML workflows on
+                  lakehouse data.</li>
+              </ul>
             </div>
-            <p class="small text-secondary mt-2" style="text-align: justify;">
-              As a Data Engineer, I tackled complex big data challenges by aligning data engineering solutions with
-              evolving business requirements. Partnered with cross-functional teams to diagnose and resolve data quality
-              issues, optimize processing workflows, in large-scale data environments. Designed and implemented
-              optimized, reliable, and cost-effective data solutions using AWS Glue, AWS Athena, AWS S3, and AWS
-              SageMaker (For Notebooks).
-            </p>
-            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
-            <ul class="small text-secondary ps-3 mb-0">
-              <li>Executed ETL workflows on AWS Data Lake using AWS Glue, Crawlers, and Athena.</li>
-              <li>Set up Hadoop sandbox environments with AWS Glue Dev Endpoints, SageMaker, and Hortonworks.</li>
-              <li>Created data pipeline that sent data to different machine learning models.</li>
-              <li>Enabled near real-time reporting, enhancing executive decision-making.</li>
-            </ul>
           </div>
 
           <!-- Accenture -->
           <div class="resume-item mt-3">
-            <span class="resume-item-title">Role: BIG DATA ENGINEER</span><br>
-            <span class="resume-item-subtitle">Accenture Pvt Ltd | <span class="resume-date">Oct'18 - Aug'21</span> |
-              Bangalore, IN</span>
-            <div class="small text-secondary mt-1">
-              <div><strong>Industry:</strong> US based Media &amp; Entertainment Client</div>
-              <div><strong>Project:</strong> Implemented migration of static files to AWS S3, optimizing storage and
-                delivery efficiency</div>
-              <div><strong>Technologies:</strong> AWS EC2, AWS DynamoDB, AWS lambda, AWS SQS</div>
+            <span class="resume-item-title">Accenture Pvt Ltd</span><br>
+            <span class="resume-item-subtitle"><span class="resume-date">Oct'18 - Aug'21</span> | Bangalore, IN</span>
+
+            <div class="mt-2">
+              <span class="resume-item-title">Role: BIG DATA ENGINEER</span>
+              <div class="small text-secondary mt-1">
+                <div><strong>Industry:</strong> US based Media &amp; Entertainment Client</div>
+                <div><strong>Project:</strong> Implemented migration of static files to AWS S3, optimizing storage and
+                  delivery efficiency</div>
+                <div><strong>Technologies:</strong> AWS Lambda, SQS, DynamoDB, S3, EC2</div>
+              </div>
+              <p class="small text-secondary mt-2" style="text-align: justify;">
+                Designed economical AWS migration architecture for on-premises media ingestion using serverless,
+                fault-tolerant workflows while preserving data integrity for a US media and entertainment client.
+              </p>
+              <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
+              <ul class="small text-secondary ps-3 mb-0">
+                <li>Architected event-driven pipelines with <strong>Lambda</strong>, <strong>SQS</strong>, and
+                  <strong>DynamoDB</strong> for resilient, scalable ingestion.</li>
+                <li>Migrated <strong>1.5 million</strong> media assets to <strong>S3</strong> with ~<strong>$100</strong>
+                  migration overhead via serverless design.</li>
+              </ul>
             </div>
-            <p class="small text-secondary mt-2" style="text-align: justify;">
-              Created, planned, and coordinated a highly effective and economical AWS migration architecture for
-              ingesting and processing data from on-premise systems. committed to utilizing serverless technologies to
-              create workflows that are scalable, fault-tolerant, and performance-optimized while maintaining data
-              integrity.
-            </p>
-            <strong class="small text-secondary d-block mt-2 mb-1">Key Achievements:</strong>
-            <ul class="small text-secondary ps-3 mb-0">
-              <li>Developed event-driven serverless architectures on AWS using Lambda, SQS, and other core services.
-              </li>
-              <li>Engineered automated migration framework to safely transfer 1.5 million media assets to AWS cloud.
-              </li>
-              <li>Developed utility tool to compress and upload 60GB zip packages directly to Digital Asset Management
-                system.</li>
-              <li>Reduced migration overhead to $100 by maximizing serverless design and minimizing dedicated EC2
-                instances.</li>
-            </ul>
           </div>
 
         </div>
 
         <!-- Project Portfolio -->
         <div>
-          <h3 class="resume-section-title">Project Portfolio</h3>
+          <h3 class="resume-section-title">Selected Projects</h3>
 
-          <!-- Fruit Classifier -->
           <div class="resume-item">
-            <span class="resume-item-title">FRUIT CLASSIFIER</span><br>
-            <span class="resume-item-subtitle">Deep Learning | <span class="resume-date">Apr'23</span></span>
-            <ul class="small text-secondary ps-3 mt-1 mb-0">
-              <li>Conducted an in-depth research project as part of a master’s program, focusing on solving a real-world
-                problem using data-driven techniques. Designed and implemented data pipelines, performed advanced data
-                analysis, and built models aligned with academic and industry standards</li>
-              <li>Fruit Classifier is a Machine Learning Model built using Convolutional Neural Network (CNN) and Deep
-                Neural Network that predicts the fruit names in an image, inspired by the notion of "Intelligent
-                Farming."</li>
-            </ul>
-          </div>
+            <span class="resume-item-title">Personal Projects</span>
 
-          <!-- Sales24 -->
-          <div class="resume-item mt-3">
-            <span class="resume-item-title">SALES24</span><br>
-            <span class="resume-item-subtitle">AWS &amp; Node.js | <span class="resume-date">Oct'19</span></span>
-            <ul class="small text-secondary ps-3 mt-1 mb-0">
-              <li>SALES24 is a proof-of-concept serverless website for selling and buying old goods.</li>
-              <li>The technologies being used are AWS API Gateway, AWS Lambda, AWS DynamoDB &amp; Amazon S3. The user
-                authentication process is managed by an API Authoriser.</li>
-            </ul>
-          </div>
+            <div class="mt-2">
+              <span class="resume-item-title">AI Travel Planning Assistant</span><br>
+              <span class="resume-item-subtitle">LangChain · Azure OpenAI · ChromaDB · Streamlit · Docker</span>
+              <ul class="small text-secondary ps-3 mt-1 mb-0">
+                <li><strong>TravelAgent</strong> orchestrator: <strong>RAG</strong> (<strong>ChromaDB</strong>) +
+                  <strong>MCP</strong> tools; <strong>Streamlit</strong>, <strong>Docker Compose</strong>,
+                  <strong>pytest</strong>.</li>
+              </ul>
+            </div>
 
-          <!-- Dog Breed Classifier -->
-          <div class="resume-item mt-3">
-            <span class="resume-item-title">DOG BREED CLASSIFIER</span><br>
-            <span class="resume-item-subtitle">Machine Learning | <span class="resume-date">Jul'18</span></span>
-            <ul class="small text-secondary ps-3 mt-1 mb-0">
-              <li>Supported the deployment and training of cutting-edge CNN models using backpropagation and chain rule.
-              </li>
-              <li>Used fundamental machine learning techniques as SoftMax, one-hot encoding, cross entropy, logistic
-                regression, and associated error function.</li>
-            </ul>
+            <div class="mt-3">
+              <span class="resume-item-title">Event Management Platform</span><br>
+              <span class="resume-item-subtitle">AI-assisted development</span>
+              <ul class="small text-secondary ps-3 mt-1 mb-0">
+                <li>Event platform with <strong>AI chatbots</strong>, connections, attendance, and networking on
+                  <strong>Azure Container Apps</strong> / <strong>Kubernetes</strong>; end-to-end
+                  <strong>AI-assisted development</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="mt-3">
+              <span class="resume-item-title">Fruit Classifier (MTech)</span><br>
+              <span class="resume-item-subtitle">Deep Learning · AWS/Keras | <span class="resume-date">Apr'23</span></span>
+              <ul class="small text-secondary ps-3 mt-1 mb-0">
+                <li>MTech thesis: CNN fruit classification via <strong>transfer learning</strong> (ResNet/VGG) on
+                  <strong>AWS</strong>/<strong>Keras</strong>; compared accuracy and cost across architectures.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -587,11 +625,65 @@
 
   </div>
 
+  <button id="scrollTop" class="scroll-top-btn" type="button" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom JS Interaction Script -->
   <script src="script.js"></script>
+  <script>
+    (function () {
+      const slot = document.getElementById('print-contacts');
+      if (!slot) return;
+      const key = [19, 7, 4];
+      const lines = [
+        { icon: 'bi-globe', text: [96, 102, 112, 122, 116, 108, 117, 114, 104, 100, 102, 106, 122, 41, 99, 122, 115, 108, 102, 101, 42, 122, 104], href: [123, 115, 112, 99, 116, 62, 60, 40, 119, 114, 115, 109, 96, 111, 98, 102, 107, 115, 114, 105, 109, 61, 96, 109, 103, 111, 113, 113, 41, 109, 124] },
+        { icon: 'bi-github', text: [116, 110, 112, 123, 114, 102, 61, 100, 107, 126, 40, 119, 114, 115, 109, 96, 111, 98, 43, 63, 61], href: [123, 115, 112, 99, 116, 62, 60, 40, 99, 122, 115, 108, 102, 101, 42, 112, 104, 105, 60, 116, 101, 103, 110, 119, 123, 97, 60, 43, 62] },
+        { icon: 'bi-envelope-fill', text: [96, 102, 112, 122, 116, 108, 61, 97, 113, 127, 112, 101, 125, 110, 50, 32, 71, 99, 126, 102, 109, 127, 41, 103, 124, 106], href: [126, 102, 109, 127, 115, 107, 41, 116, 101, 103, 110, 119, 123, 41, 98, 102, 107, 115, 114, 105, 109, 37, 52, 68, 116, 106, 101, 122, 107, 42, 112, 104, 105] },
+        { icon: 'bi-telephone-fill', text: [56, 62, 53, 62, 62, 53, 39, 50, 53, 36, 50, 53, 34, 54] }
+      ];
+
+      function decode(data) {
+        return String.fromCharCode(...data.map((code, i) => code ^ key[i % key.length]));
+      }
+
+      function reveal() {
+        slot.replaceChildren();
+        lines.forEach((line) => {
+          const row = document.createElement('div');
+          row.className = 'mb-1';
+          const icon = document.createElement('i');
+          icon.className = line.icon + ' me-2';
+          icon.setAttribute('aria-hidden', 'true');
+          const label = decode(line.text);
+          row.append(icon);
+          if (line.href) {
+            const link = document.createElement('a');
+            link.href = decode(line.href);
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'text-secondary text-decoration-none';
+            link.textContent = label;
+            row.append(link);
+          } else {
+            row.append(document.createTextNode(label));
+          }
+          slot.append(row);
+        });
+      }
+
+      function clear() {
+        slot.replaceChildren();
+      }
+
+      window.addEventListener('beforeprint', reveal);
+      window.addEventListener('afterprint', clear);
+      if (window.matchMedia('print').matches) reveal();
+    })();
+  </script>
 </body>
 
 </html>
