@@ -5,7 +5,7 @@ alwaysApply: true
 
 # satishfulwani.github.io
 
-Static personal portfolio. No build step. GitHub Pages deploys the repo root via `.github/workflows/static.yml` on push to `main`.
+Static personal portfolio. No build step. GitHub Pages deploys the repo root via `.github/workflows/static.yml` on push to `main` after the `validate` job passes (HTML via `html-validate` + local link checks in `.github/scripts/validate-site.sh`; also runs on `pull_request`). Resume PDF is regenerated on `main` when `resume.html` or `custom.css` change via `.github/workflows/resume-pdf.yml` (`.github/scripts/generate-resume-pdf.sh`).
 
 ## Pages
 
@@ -19,7 +19,7 @@ Shared: `custom.css`, `script.js`, `assets/` (images, `Satish_Fulwani_Resume.pdf
 
 ## Resume PDF
 
-`generate_pdf.sh` prints `resume.html` with headless Chrome to `assets/Satish_Fulwani_Resume.pdf`. Nav **Resume** on all pages opens `resume.html`; the resume page action bar offers **Download PDF** (stored file) and print/save via the browser.
+`generate_pdf.sh` (local wrapper) and `.github/scripts/generate-resume-pdf.sh` print `resume.html` with headless Chrome/Chromium to `assets/Satish_Fulwani_Resume.pdf`. Nav **Resume** on all pages opens `resume.html`; the resume page action bar offers **Download PDF** (stored file) and print/save via the browser.
 
 ## Contact
 
