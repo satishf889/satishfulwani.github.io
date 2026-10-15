@@ -5,7 +5,7 @@ alwaysApply: true
 
 # satishfulwani.github.io
 
-Static personal portfolio. No build step. GitHub Pages deploys the repo root via `.github/workflows/static.yml` on push to `main` after the `validate` job passes (HTML via `html-validate` + local link checks in `.github/scripts/validate-site.sh`; also runs on `pull_request`). Resume PDF is regenerated on `main` when `resume.html` or `custom.css` change via `.github/workflows/resume-pdf.yml` (`.github/scripts/generate-resume-pdf.sh`).
+Static personal portfolio. No build step. PRs run **Validate site** (`.github/workflows/validate.yml`: `html-validate` + local link checks in `.github/scripts/validate-site.sh`). GitHub Pages deploys the repo root via `.github/workflows/static.yml` on push to `main` (validate, then deploy). Resume PDF is regenerated on `main` when `resume.html` or `custom.css` change via `.github/workflows/resume-pdf.yml` (`.github/scripts/generate-resume-pdf.sh`).
 
 ## Pages
 
