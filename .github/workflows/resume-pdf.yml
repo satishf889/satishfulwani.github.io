@@ -19,9 +19,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Chromium
-        run: sudo apt-get update && sudo apt-get install -y chromium-browser
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
       - name: Generate PDF
+        env:
+          CHROME_BIN: chrome
+          DBUS_SESSION_BUS_ADDRESS: /dev/null
         run: bash .github/scripts/generate-resume-pdf.sh
       - name: Commit PDF if changed
         run: |
