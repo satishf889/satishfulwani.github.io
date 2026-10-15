@@ -22,10 +22,14 @@ fi
 
 echo "Generating PDF resume using: $CHROME"
 
+export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-/dev/null}"
+
 "$CHROME" \
-  --headless \
+  --headless=new \
   --disable-gpu \
   --no-sandbox \
+  --disable-dev-shm-usage \
+  --disable-software-rasterizer \
   --disk-cache-size=1 \
   --print-to-pdf="$OUTPUT" \
   "$HTML"
