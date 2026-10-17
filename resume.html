@@ -99,6 +99,46 @@
       font-weight: 600;
     }
 
+    .resume-copy {
+      text-align: justify;
+    }
+
+    @media (max-width: 767.98px) {
+      .action-bar {
+        position: sticky;
+        top: 3.25rem;
+        z-index: 1020;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.5rem 0.75rem;
+        gap: 0.35rem;
+        justify-content: stretch;
+        align-items: stretch;
+        background-color: var(--bg-primary);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .action-bar .btn {
+        flex: 1;
+        min-width: 0;
+        padding: 0.45rem 0.4rem;
+        font-size: 0.78rem;
+      }
+
+      .resume-container {
+        margin: 1rem auto;
+        padding: 1.15rem;
+      }
+
+      .resume-header .header-name {
+        font-size: 1.35rem;
+      }
+
+      .resume-copy {
+        text-align: left;
+      }
+    }
+
     /* Print media overrides */
     @page {
       size: letter;
@@ -312,13 +352,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#work">Work</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#tech-stack">Tech Stack</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-premium" href="resume.html">
-              <i class="bi bi-file-earmark-person"></i> Resume
+            <a class="btn btn-premium" href="assets/Satish_Fulwani_Resume.pdf" download="Satish_Fulwani_Resume.pdf" aria-label="Download resume PDF">
+              <i class="bi bi-download" aria-hidden="true"></i> Resume
             </a>
           </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
@@ -335,14 +377,20 @@
 
   <!-- Action Bar -->
   <div class="action-bar px-3">
-    <a href="index.html" class="btn btn-premium-outline">
-      <i class="bi bi-arrow-left"></i> Back to Portfolio
+    <a href="index.html" class="btn btn-premium-outline" aria-label="Back to Portfolio">
+      <i class="bi bi-arrow-left" aria-hidden="true"></i>
+      <span class="d-none d-md-inline">Back to Portfolio</span>
+      <span class="d-md-none">Back</span>
     </a>
-    <a href="assets/Satish_Fulwani_Resume.pdf" download="Satish_Fulwani_Resume.pdf" class="btn btn-premium-outline">
-      <i class="bi bi-download"></i> Download PDF
+    <a href="assets/Satish_Fulwani_Resume.pdf" download="Satish_Fulwani_Resume.pdf" class="btn btn-premium-outline" aria-label="Download PDF">
+      <i class="bi bi-download" aria-hidden="true"></i>
+      <span class="d-none d-md-inline">Download PDF</span>
+      <span class="d-md-none">PDF</span>
     </a>
-    <button type="button" onclick="window.print()" class="btn btn-premium">
-      <i class="bi bi-printer-fill"></i> Print Resume / Save PDF
+    <button type="button" onclick="window.print()" class="btn btn-premium" aria-label="Print Resume or Save PDF">
+      <i class="bi bi-printer-fill" aria-hidden="true"></i>
+      <span class="d-none d-md-inline">Print Resume / Save PDF</span>
+      <span class="d-md-none">Print</span>
     </button>
   </div>
 
@@ -372,30 +420,30 @@
 
     <div class="row">
       <!-- Left Column (Narrower, Summary/Skills/Education/Certs/Co-curricular) -->
-      <div class="col-md-4 border-end border-secondary-subtle pe-md-3">
+      <div class="col-md-4 border-md-end border-secondary-subtle pe-md-3">
 
         <!-- Summary -->
         <div class="mb-4">
           <h3 class="resume-section-title">Summary</h3>
-          <p class="text-secondary mb-2" style="text-align: justify;">
+          <p class="text-secondary mb-2 resume-copy">
             <strong>Staff Data Engineer</strong> with <strong>8+ years</strong> building reliable, cloud-native data
             platforms. Seeking <strong>Senior Data Engineer</strong> roles at large investment firms. Strengths include
             <strong>Snowflake</strong> warehousing, <strong>realtime pipelines</strong> (Kafka, Lambda), batch ETL/ELT on
             <strong>Azure Data Factory</strong> and <strong>Databricks</strong>, and production <strong>GenAI/RAG</strong>
             on <strong>Snowflake Cortex AI</strong> and <strong>LangChain</strong>.
           </p>
-          <p class="text-secondary mb-2" style="text-align: justify;">
+          <p class="text-secondary mb-2 resume-copy">
             Led a team of <strong>3</strong> to modernize a legacy platform on <strong>Azure and Snowflake</strong>,
             migrating <strong>1+ TB</strong> with <strong>zero downtime</strong> for a major <strong>regulated insurance</strong>
             program. Delivered agent <strong>skills and automations</strong> and event-driven streaming into Snowflake for
             analytics. Mentor engineers; partner with product and business on data quality and SLAs.
           </p>
-          <p class="text-secondary mb-2" style="text-align: justify;">
+          <p class="text-secondary mb-2 resume-copy">
             Proven delivery in regulated, high-volume environments (insurance, media, nutrition); comfortable partnering
             with business and compliance stakeholders on <strong>data governance</strong>, quality SLAs, and platform
             reliability.
           </p>
-          <p class="text-secondary mb-0" style="text-align: justify;">
+          <p class="text-secondary mb-0 resume-copy">
             Rapidly adapts to new stacks, tooling, and domains - learn, unlearn, and relearn is a working principle.
           </p>
         </div>
@@ -490,7 +538,7 @@
                 <div><strong>Technologies:</strong> AWS, Terraform, LangChain, Kafka, Lambda, Snowflake Cortex AI, S3,
                   API Gateway, Python</div>
               </div>
-              <p class="small text-secondary mt-2" style="text-align: justify;">
+              <p class="small text-secondary mt-2 resume-copy">
                 Led architecture and delivery of a Terraform-managed AWS data platform, a production GenAI bot, and
                 realtime Kafka streaming. Mentored engineers and drove adoption of agent-tooling patterns across the team.
               </p>
@@ -518,7 +566,7 @@
                 <div><strong>Project:</strong> Azure Cloud Data Pipeline Modernization</div>
                 <div><strong>Technologies:</strong> Azure Data Factory, Databricks, PySpark, Azure SQL, Snowflake</div>
               </div>
-              <p class="small text-secondary mt-2" style="text-align: justify;">
+              <p class="small text-secondary mt-2 resume-copy">
                 Led a team of 3 to modernize Asia's largest insurance company's on-premises data estate onto Azure,
                 delivering reliable pipelines, regulatory-grade governance, and executive analytics.
               </p>
@@ -554,7 +602,7 @@
                 <div><strong>Technologies:</strong> Spark (PySpark), Python, AWS Glue, Hadoop, AWS S3, Microsoft Dynamics
                   (CRM)</div>
               </div>
-              <p class="small text-secondary mt-2" style="text-align: justify;">
+              <p class="small text-secondary mt-2 resume-copy">
                 Aligned data engineering with evolving business needs: data quality, optimized Glue/Athena/S3 lakehouse
                 patterns, and SageMaker notebooks for ML workflows serving a global nutrition client.
               </p>
@@ -581,7 +629,7 @@
                   delivery efficiency</div>
                 <div><strong>Technologies:</strong> AWS Lambda, SQS, DynamoDB, S3, EC2</div>
               </div>
-              <p class="small text-secondary mt-2" style="text-align: justify;">
+              <p class="small text-secondary mt-2 resume-copy">
                 Designed economical AWS migration architecture for on-premises media ingestion using serverless,
                 fault-tolerant workflows while preserving data integrity for a US media and entertainment client.
               </p>

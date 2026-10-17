@@ -5,35 +5,84 @@ document.addEventListener('DOMContentLoaded', () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // 2. Theme Toggle Logic
+  // 2. Theme Toggle Logic (follows device setting until user picks light/dark)
   const themeToggleBtn = document.getElementById('themeToggle');
   const htmlElement = document.documentElement;
+  const themeStorageKey = 'theme';
+  const systemThemeQuery = window.matchMedia('(prefers-color-scheme: light)');
 
-  function setTheme(theme) {
-    htmlElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    
-    if (themeToggleBtn) {
-      const icon = themeToggleBtn.querySelector('i');
-      if (icon) {
-        if (theme === 'light') {
-          icon.className = 'bi bi-moon-fill';
-        } else {
-          icon.className = 'bi bi-sun';
-        }
-      }
-    }
+  function getSystemTheme() {
+    return systemThemeQuery.matches ? 'light' : 'dark';
   }
 
-  // Load saved theme preference or default to dark
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  setTheme(savedTheme);
+  function updateThemeToggleIcon(effectiveTheme) {
+    if (!themeToggleBtn) {
+      return;
+    }
+    const icon = themeToggleBtn.querySelector('i');
+    if (!icon) {
+      return;
+    }
+    icon.className = effectiveTheme === 'light' ? 'bi bi-moon-fill' : 'bi bi-sun';
+  }
+
+  function applyTheme(effectiveTheme) {
+    htmlElement.setAttribute('data-theme', effectiveTheme);
+    updateThemeToggleIcon(effectiveTheme);
+  }
+
+  function setStoredTheme(preference) {
+    localStorage.setItem(themeStorageKey, preference);
+    if (preference === 'system') {
+      applyTheme(getSystemTheme());
+      return;
+    }
+    applyTheme(preference);
+  }
+
+  function getStoredThemePreference() {
+    const stored = localStorage.getItem(themeStorageKey);
+    if (stored === 'light' || stored === 'dark' || stored === 'system') {
+      return stored;
+    }
+    return 'system';
+  }
+
+  function resolveEffectiveTheme(preference) {
+    if (preference === 'light' || preference === 'dark') {
+      return preference;
+    }
+    return getSystemTheme();
+  }
+
+  const initialPreference = getStoredThemePreference();
+  applyTheme(resolveEffectiveTheme(initialPreference));
+
+  systemThemeQuery.addEventListener('change', (event) => {
+    if (getStoredThemePreference() === 'system') {
+      applyTheme(event.matches ? 'light' : 'dark');
+    }
+  });
 
   if (themeToggleBtn) {
+    const themeToggleLabels = {
+      system: 'Use device theme setting (click for light mode)',
+      light: 'Light mode (click for dark mode)',
+      dark: 'Dark mode (click to use device setting)',
+    };
+
+    const syncThemeToggleLabel = () => {
+      const preference = getStoredThemePreference();
+      themeToggleBtn.setAttribute('aria-label', themeToggleLabels[preference]);
+    };
+
+    syncThemeToggleLabel();
+
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
+      const preference = getStoredThemePreference();
+      const nextPreference = preference === 'system' ? 'light' : preference === 'light' ? 'dark' : 'system';
+      setStoredTheme(nextPreference);
+      syncThemeToggleLabel();
     });
   }
 
@@ -54,19 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
 
     // Custom ScrollSpy implementation (resolves offset timing bugs)
-    const sections = document.querySelectorAll('section, header');
+    const scrollTargets = document.querySelectorAll('section, header, #tech-stack');
     const navLinks = document.querySelectorAll('#navbar .nav-link');
 
     const activeNavSpy = () => {
       let currentActiveId = '';
       const scrollPosition = window.scrollY + 130; // 130px offset matches fixed navbar + padding
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          currentActiveId = section.getAttribute('id');
+      scrollTargets.forEach((target) => {
+        const targetId = target.getAttribute('id');
+        if (!targetId) {
+          return;
+        }
+        const targetTop = target.offsetTop;
+        if (scrollPosition >= targetTop) {
+          if (!currentActiveId) {
+            currentActiveId = targetId;
+          } else {
+            const currentTop = document.getElementById(currentActiveId)?.offsetTop ?? 0;
+            if (targetTop > currentTop) {
+              currentActiveId = targetId;
+            }
+          }
         }
       });
 
@@ -93,6 +151,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', activeNavSpy);
     activeNavSpy(); // Initialize on load
+
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu && typeof bootstrap !== 'undefined') {
+      const navCollapse = bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false });
+      const mobileNavMedia = window.matchMedia('(max-width: 991.98px)');
+
+      navbar.addEventListener('click', (event) => {
+        if (!mobileNavMedia.matches) {
+          return;
+        }
+        if (event.target.closest('.navbar-toggler, [data-bs-toggle="collapse"]')) {
+          return;
+        }
+        const link = event.target.closest('a');
+        const menuButton = event.target.closest('#navMenu button');
+        if (link || menuButton) {
+          navCollapse.hide();
+        }
+      }, true);
+
+      document.addEventListener('click', (event) => {
+        if (!mobileNavMedia.matches) {
+          return;
+        }
+        if (navbar.contains(event.target)) {
+          return;
+        }
+        navCollapse.hide();
+      });
+    }
   }
 
   // 4. Scroll Reveal Animations (using Intersection Observer)
