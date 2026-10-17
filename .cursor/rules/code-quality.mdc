@@ -1,0 +1,14 @@
+---
+description: Prefer simple, maintainable implementations with low complexity
+alwaysApply: true
+---
+
+# Code quality
+
+- Ship the smallest change that solves the problem. Reuse Bootstrap utilities, `custom.css`, and `script.js` before adding files, helpers, or abstractions.
+- Choose the path with fewer branches and less indirection. Favor one obvious flow over a clever one.
+- Add complexity only when it removes real duplication or protects a hard constraint (shared nav markup across pages, `@media print` on `resume.html`).
+- Match existing patterns in this repo (CSS variables, `btn-premium`, Bootstrap collapse) instead of introducing a parallel style.
+- When two options work, pick the one that is easier to read and change six months later.
+
+Example: a sticky resume action bar with responsive label spans in existing CSS beats a new component or extra script for three buttons.
