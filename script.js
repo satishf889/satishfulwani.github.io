@@ -65,23 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (themeToggleBtn) {
-    const themeToggleLabels = {
-      system: 'Use device theme setting (click for light mode)',
-      light: 'Light mode (click for dark mode)',
-      dark: 'Dark mode (click to use device setting)',
-    };
-
     const syncThemeToggleLabel = () => {
-      const preference = getStoredThemePreference();
-      themeToggleBtn.setAttribute('aria-label', themeToggleLabels[preference]);
+      const effective = htmlElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      themeToggleBtn.setAttribute(
+        'aria-label',
+        effective === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+      );
     };
 
     syncThemeToggleLabel();
 
     themeToggleBtn.addEventListener('click', () => {
-      const preference = getStoredThemePreference();
-      const nextPreference = preference === 'system' ? 'light' : preference === 'light' ? 'dark' : 'system';
-      setStoredTheme(nextPreference);
+      const effective = htmlElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      setStoredTheme(effective === 'light' ? 'dark' : 'light');
       syncThemeToggleLabel();
     });
   }
@@ -103,8 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
 
     // Custom ScrollSpy implementation (resolves offset timing bugs)
-    const scrollTargets = document.querySelectorAll('section, header, #tech-stack');
+    const scrollTargets = document.querySelectorAll('header[id], section[id]');
     const navLinks = document.querySelectorAll('#navbar .nav-link');
+
+    const getDocumentTop = (element) => element.getBoundingClientRect().top + window.scrollY;
 
     const activeNavSpy = () => {
       let currentActiveId = '';
@@ -112,15 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       scrollTargets.forEach((target) => {
         const targetId = target.getAttribute('id');
-        if (!targetId) {
+        if (!targetId || targetId === 'about' || targetId === 'tech-stack') {
           return;
         }
-        const targetTop = target.offsetTop;
+        const targetTop = getDocumentTop(target);
         if (scrollPosition >= targetTop) {
           if (!currentActiveId) {
             currentActiveId = targetId;
           } else {
-            const currentTop = document.getElementById(currentActiveId)?.offsetTop ?? 0;
+            const currentEl = document.getElementById(currentActiveId);
+            const currentTop = currentEl ? getDocumentTop(currentEl) : 0;
             if (targetTop > currentTop) {
               currentActiveId = targetId;
             }
@@ -245,165 +244,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Interactive Data Network Canvas Animation (Catchy Hero Visual)
-  const canvas = document.getElementById('dataNetworkCanvas');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (canvas && !prefersReducedMotion) {
-    const ctx = canvas.getContext('2d');
-    let width = canvas.offsetWidth;
-    let height = canvas.offsetHeight;
-    
-    // Set device pixel ratio for sharp rendering on retina displays
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    ctx.scale(dpr, dpr);
-    
-    // Colors matching CSS theme variables
-    let primaryColor = '#38bdf8'; // Cyan
-    let secondaryColor = '#a855f7'; // Purple
-    
-    // Update colors dynamically based on light/dark theme
-    const updateCanvasColors = () => {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        primaryColor = '#0284c7';
-        secondaryColor = '#7c3aed';
-      } else {
-        primaryColor = '#38bdf8';
-        secondaryColor = '#a855f7';
-      }
-    };
-    updateCanvasColors();
-    
-    // Watch for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'data-theme') {
-          updateCanvasColors();
+  // 5. Case study modal
+  const caseStudyModalEl = document.getElementById('caseStudyModal');
+  const caseStudyModalBody = document.getElementById('caseStudyModalBody');
+  const caseStudyModalLabel = document.getElementById('caseStudyModalLabel');
+  let caseStudyModal;
+  let lastCaseStudyTrigger = null;
+
+  if (caseStudyModalEl && typeof bootstrap !== 'undefined') {
+    caseStudyModal = new bootstrap.Modal(caseStudyModalEl);
+
+    document.querySelectorAll('.case-study-open').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const studyId = btn.getAttribute('data-study');
+        const template = document.getElementById(`case-study-${studyId}`);
+        if (!template || !caseStudyModalBody) {
+          return;
         }
+
+        lastCaseStudyTrigger = btn;
+        caseStudyModalBody.innerHTML = '';
+        caseStudyModalBody.appendChild(template.content.cloneNode(true));
+
+        const titleEl = caseStudyModalBody.querySelector('.blog-title');
+        if (titleEl && caseStudyModalLabel) {
+          caseStudyModalLabel.textContent = titleEl.textContent.trim();
+        }
+
+        caseStudyModal.show();
       });
     });
-    observer.observe(document.documentElement, { attributes: true });
-    
-    const particles = [];
-    const particleCount = 45;
-    const maxDistance = 95;
-    const mouse = { x: null, y: null, radius: 120 };
-    
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.7;
-        this.vy = (Math.random() - 0.5) * 0.7;
-        this.radius = Math.random() * 3 + 1.5;
-        this.color = Math.random() > 0.5 ? primaryColor : secondaryColor;
+
+    caseStudyModalEl.addEventListener('hidden.bs.modal', () => {
+      if (caseStudyModalBody) {
+        caseStudyModalBody.innerHTML = '';
       }
-      
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        
-        // Bounce off bounds
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-        
-        // Clamp position within canvas bounds
-        if (this.x < 0) this.x = 0;
-        if (this.x > width) this.x = width;
-        if (this.y < 0) this.y = 0;
-        if (this.y > height) this.y = height;
-        
-        // Mouse interact: attract particles
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = mouse.x - this.x;
-          const dy = mouse.y - this.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < mouse.radius) {
-            const force = (mouse.radius - dist) / mouse.radius;
-            this.x += (dx / dist) * force * 1.2;
-            this.y += (dy / dist) * force * 1.2;
-          }
-        }
+      if (lastCaseStudyTrigger) {
+        lastCaseStudyTrigger.focus();
+        lastCaseStudyTrigger = null;
       }
-      
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = this.color;
-        ctx.fill();
-        ctx.shadowBlur = 0; // Reset shadow
-      }
-    }
-    
-    // Init particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-    
-    // Track mouse
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
     });
-    
-    canvas.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-    
-    // Connect particles
-    function connect() {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.hypot(dx, dy);
-          
-          if (dist < maxDistance) {
-            // Draw connecting lines with alpha based on distance
-            const alpha = (maxDistance - dist) / maxDistance * 0.22;
-            ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`; // Subtle purple/gradient
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
-      }
-    }
-    
-    // Animation loop
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      
-      connect();
-      requestAnimationFrame(animate);
-    }
-    
-    // Resize handler
-    window.addEventListener('resize', () => {
-      width = canvas.offsetWidth;
-      height = canvas.offsetHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
-    });
-    
-    animate();
   }
 
-  // 6. Contact Form AJAX Submission
+  // 7. Contact Form AJAX Submission
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
